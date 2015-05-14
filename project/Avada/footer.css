@@ -1,0 +1,11 @@
+#footer{
+	background: url("images/img/footer/footer.png") !important;
+	width: 980px;
+	margin: 0 auto;
+	border-top: 0px !important;
+	height:30px;
+	display:block;
+	position:relative;
+	padding: 0 !important;
+	z-index:9999;
+}
