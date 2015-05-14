@@ -10,7 +10,7 @@
 
 
 	$url 	= 'Avada';
-
+	$title = '妖怪ウォッチ　グッズ   &#8211;  商品カテゴリ';
 	
 	$smarty->assign("baseurl", $url);
 
