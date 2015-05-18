@@ -9,8 +9,8 @@
 		<meta name="keywords" content="妖怪ウォッチ,グッズ,アイテム,妖怪ワールド,アニメ,妖怪,ようかい." />
 		<meta name="description" content="妖怪ウォッチのポータルサイト「妖怪ワールド」です。妖怪ウォッチ関連のグッズ、アイテムをご紹介！" />
 		<style type="text/css">
-			{literal}
-			body {
+		{literal}
+		body {
 	        margin:0;
 	        color:#747474;
 	        min-width:320px;
@@ -19,7 +19,7 @@
 		}
 
 		body #header.sticky-header {
-			background: rgba(255,255,255,0.97) url('wp-content/themes/Avada/images/img/header/header_bg.png') !important;
+			background: rgba(255,255,255,0.97) url('../../wp-content/themes/Avada/images/img/header/header_bg.png') !important;
 			background-repeat: no-repeat !important;
 			/*height: 71px;*/
 			height: 60px;
@@ -40,7 +40,7 @@
 		}
 
 		div#main {
-		    background-image: url('wp-content/themes/Avada/images/img/home/goods_bg.png');
+		    background-image: url('./wp-content/themes/Avada/images/img/home/goods_bg.png');
 		    /*background-size: contain;*/
 		    margin : 0 auto 0 auto;
 		    width: 100%;
@@ -112,390 +112,668 @@
 		}
 
 		.logo,
-.footer-area {
-	background-size: contain;
-}
+		.footer-area {
+			background-size: contain;
+		}
 		
 		body #header.sticky-header .logo img{vertical-align:middle;line-height:65px !important;}
 
 		#header .normal_logo { display:inline !important; }
 
 		img{
-        border-style:none;
-        vertical-align:top;
-        max-width:100%;
-        height:auto;
-}
+	        border-style:none;
+	        vertical-align:top;
+	        max-width:100%;
+	        height:auto;
+		}
 	
 		body #header.sticky-header .goods_logo{
-	float: right;
-	/* margin: -50px 0 0 0; */
-	display: inline-block;
-	position: relative;
-}
+			float: right;
+			/* margin: -50px 0 0 0; */
+			display: inline-block;
+			position: relative;
+		}
 
 		body #header.sticky-header .logo .goods_logo a{
-	margin: -54px 0 0 0 !important;
-}
+			margin: -54px 0 0 0 !important;
+		}
 
-body #header.sticky-header .logo a{height:65px;line-height:65px;}
+		body #header.sticky-header .logo a{height:65px;line-height:65px;}
+		
+		#header .logo a{
+	        height:100%;
+	        display:block;
+		}
 
-#header .logo a{
-        height:100%;
-        display:block;
-}
+		body #header.sticky-header .logo a{
+			float:left;
+			/*margin: -3px 0 0 0 !important;*/
+		}
 
-body #header.sticky-header .logo a{
-	float:left;
-	/*margin: -3px 0 0 0 !important;*/
-}
+		body #header.sticky-header .goods_logo a{
+			background: url('wp-content/themes/Avada/images/img/header/headerlogo.png');
+		    width: 237px;
+		    height: 48px;
+		}
 
-body #header.sticky-header .goods_logo a{
-	background: url('wp-content/themes/Avada/images/img/header/headerlogo.png');
-    width: 237px;
-    height: 48px;
-}
+		body a{color:#333333;}
 
-body a{color:#333333;}
+		a{
+	        text-decoration:none;
+	        color:#333;
+		}
 
-a{
-        text-decoration:none;
-        color:#333;
-}
+		nav#nav.nav-holder ul#nav.menu {
+			margin: 0 auto !important;
+			width: 600px !important;
+			height: 62px !important;
+		}
 
-nav#nav.nav-holder ul#nav.menu {
-	margin: 0 auto !important;
-	width: 600px !important;
-	height: 62px !important;
-}
+		#nav ul{
+	        list-style:none;
+	        margin:0;
+	        padding:0;
+		}
 
-#nav ul{
-        list-style:none;
-        margin:0;
-        padding:0;
-}
+		#nav ul li {
+			padding: 0px !important;
+			background-size: contain !important;
+		}
 
-#nav ul li {
-	padding: 0px !important;
-	background-size: contain !important;
-}
+		#nav ul a,#nav li.current-menu-ancestor a{
+	        display:block;
+	        height:83px;
+	        line-height:83px;
+	        border-top:3px solid #fff;
+		}
 
-#nav ul a,#nav li.current-menu-ancestor a{
-        display:block;
-        height:83px;
-        line-height:83px;
-        border-top:3px solid #fff;
-}
+		div#wrapper div#main div.avada-row {
+		   /*  background-image: url(/wp-content/themes/Avada/images/img/home/goods_bg.png); */
+		    width:980px;
+		    padding-bottom: 50px;
+		    max-width:980px;
+		}
 
-div#wrapper div#main div.avada-row {
-   /*  background-image: url(/wp-content/themes/Avada/images/img/home/goods_bg.png); */
-    width:980px;
-    padding-bottom: 50px;
-    max-width:980px;
-}
+		#content {
+		    width: 660px;/*713px;*/
+		    margin-bottom: 0;
+		    float:right;
+		}
 
-#content {
-    width: 660px;/*713px;*/
-    margin-bottom: 0;
-    float:right;
-}
+		.clearfix:after,#content:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
 
-.clearfix:after,#content:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+		body.home #posts-container{
+		    background:url('wp-content/themes/Avada/images/img/home/bg_goods.png');
+		    background-repeat: repeat;
+		    border-top: 3px solid #325DE6;
+		    border-bottom: 3px solid #325DE6;
+		}
 
-body.home #posts-container{
-    background:url('wp-content/themes/Avada/images/img/home/bg_goods.png');
-    background-repeat: repeat;
-    border-top: 3px solid #325DE6;
-    border-bottom: 3px solid #325DE6;
-}
+		body.home div#wrapper div#main div.avada-row div#sticker{
+		    width:240px;
+		    min-height: 890px;
+		} 
 
-body.home div#wrapper div#main div.avada-row div#sticker{
-    width:240px;
-    min-height: 890px;
-} 
+		table{
+	       border-collapse:collapse;
+	       border-spacing:0;
+		}
+		
+		.side1{
+			background:url('wp-content/themes/Avada/images/img/home/side1.png');
+			width:252px;
+			height:143px;
+			display: inline-block;
+		}
 
-table{
-        border-collapse:collapse;
-        border-spacing:0;
-}
-.side1{
-	background:url('wp-content/themes/Avada/images/img/home/side1.png');
-	width:252px;
-	height:143px;
-	display: inline-block;
-}
+		.page_item_menu1{
+			background:url('wp-content/themes/Avada/images/img/home/menu1.png');
+			width:239px;
+			height:39px;
+			display: inline-block;
+		}
+		
+		.page_item_menu1.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover1.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu1:hover{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover1.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu2{
+			background:url('wp-content/themes/Avada/images/img/home/menu2.png');
+			width:239px;
+			height:39px;
+			display: inline-block;
+		}
+		
+		.page_item_menu2.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover2.png');
+		}
+		
+		.page_item_menu2:hover{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover2.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu3{
+			background:url('wp-content/themes/Avada/images/img/home/menu3.png');
+			width:239px;
+			height:39px;
+			display: inline-block;
+		}
+		
+		.page_item_menu3.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover3.png');
+		}
+		
+		.page_item_menu3:hover{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover3.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu4{
+			background:url('wp-content/themes/Avada/images/img/home/menu4.png');
+			width:239px;
+			height:39px;
+			display: inline-block;
+		}
+		
+		.page_item_menu4.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover4.png');
+		}
+		
+		.page_item_menu4:hover{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover4.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu5{
+			background:url('wp-content/themes/Avada/images/img/home/menu5.png');
+			width:239px;
+			height:39px;
+			display: inline-block;
+		}
+		
+		.page_item_menu5.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover5.png');
+		}
+		
+		.page_item_menu5:hover{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover5.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu6{
+			background:url('wp-content/themes/Avada/images/img/home/menu6.png');
+			width:239px;
+			height:39px;
+			display: inline-block;
+		}
+		
+		.page_item_menu6.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover6.png');
+		}
+		
+		.page_item_menu6:hover{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover6.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu7{
+			background:url('wp-content/themes/Avada/images/img/home/menu7.png');
+			width:239px;
+			height:39px;
+			display: inline-block;
+		}
+				
+		.page_item_menu7.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover7.png');
+		}
+		
+		.page_item_menu7:hover{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover7.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu8{
+			background:url('wp-content/themes/Avada/images/img/home/menu8.png');
+			width:239px;
+			height:39px;
+			display: inline-block;
+		}
+				
+		.page_item_menu8.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover8.png');
+		}
+		
+		.page_item_menu8:hover{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover8.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu9{
+			background:url('wp-content/themes/Avada/images/img/home/menu9.png');
+			width:239px;
+			height:39px;
+			display: inline-block;
+		}
+		
+		.page_item_menu9.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover9.png');
+		}
+		
+		.page_item_menu9:hover{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover9.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu10{
+			background:url('wp-content/themes/Avada/images/img/home/menu10.png');
+			width:239px;
+			height:39px;
+			display: inline-block;
+		}
+		
+		.page_item_menu10.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover10.png');
+		}
+		
+		.page_item_menu10:hover{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover10.png');
+			cursor:pointer;
+		}
+		
+		.page_item_menu11{
+		    background:url('wp-content/themes/Avada/images/img/home/menu11.png');
+		    width:239px;
+		    height:39px;
+		    display: inline-block;
+		}
+		
+		.page_item_menu11.current{
+		    background:url('wp-content/themes/Avada/images/img/home/menu_hover11.png');
+		}
+		
+		.page_item_menu11:hover{
+		    background:url('wp-content/themes/Avada/images/img/home/menu_hover11.png');
+		    cursor:pointer;
+		}
+		
+		.page_item_menu12{
+		    background:url('wp-content/themes/Avada/images/img/home/menu12.png');
+		    width:239px;
+		    height:39px;
+		    display: inline-block;
+		}
+		
+		.page_item_menu12.current,.page_item_menu12.slug{
+		    background:url('wp-content/themes/Avada/images/img/home/menu_hover12.png');
+		}
+		
+		.page_item_menu12:hover{
+		    background:url('wp-content/themes/Avada/images/img/home/menu_hover12.png');
+		    cursor:pointer;
+		}
+		
+		.nkb{
+		    margin-top:40px;
+		    background: url('wp-content/themes/Avada/images/img/home/side_banner_test.gif');
+		    width: 241px;
+		    height: 103px;
+		}
 
-.page_item_menu1{
-	background:url('wp-content/themes/Avada/images/img/home/menu1.png');
-	width:239px;
-	height:39px;
-	display: inline-block;
-}
-.page_item_menu1.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover1.png');
-	cursor:pointer;
-}
-.page_item_menu1:hover{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover1.png');
-	cursor:pointer;
-}
-.page_item_menu2{
-	background:url('wp-content/themes/Avada/images/img/home/menu2.png');
-	width:239px;
-	height:39px;
-	display: inline-block;
-}
-.page_item_menu2.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover2.png');
-}
-.page_item_menu2:hover{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover2.png');
-	cursor:pointer;
-}
-.page_item_menu3{
-	background:url('wp-content/themes/Avada/images/img/home/menu3.png');
-	width:239px;
-	height:39px;
-	display: inline-block;
-}
-.page_item_menu3.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover3.png');
-}
-.page_item_menu3:hover{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover3.png');
-	cursor:pointer;
-}
-.page_item_menu4{
-	background:url('wp-content/themes/Avada/images/img/home/menu4.png');
-	width:239px;
-	height:39px;
-	display: inline-block;
-}
-.page_item_menu4.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover4.png');
-}
-.page_item_menu4:hover{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover4.png');
-	cursor:pointer;
-}
-.page_item_menu5{
-	background:url('wp-content/themes/Avada/images/img/home/menu5.png');
-	width:239px;
-	height:39px;
-	display: inline-block;
-}
-.page_item_menu5.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover5.png');
-}
-.page_item_menu5:hover{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover5.png');
-	cursor:pointer;
-}
-.page_item_menu6{
-	background:url('wp-content/themes/Avada/images/img/home/menu6.png');
-	width:239px;
-	height:39px;
-	display: inline-block;
-}
-.page_item_menu6.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover6.png');
-}
-.page_item_menu6:hover{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover6.png');
-	cursor:pointer;
-}
-.page_item_menu7{
-	background:url('wp-content/themes/Avada/images/img/home/menu7.png');
-	width:239px;
-	height:39px;
-	display: inline-block;
-}
-.page_item_menu7.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover7.png');
-}
-.page_item_menu7:hover{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover7.png');
-	cursor:pointer;
-}
-.page_item_menu8{
-	background:url('wp-content/themes/Avada/images/img/home/menu8.png');
-	width:239px;
-	height:39px;
-	display: inline-block;
-}
-.page_item_menu8.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover8.png');
-}
-.page_item_menu8:hover{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover8.png');
-	cursor:pointer;
-}
-.page_item_menu9{
-	background:url('wp-content/themes/Avada/images/img/home/menu9.png');
-	width:239px;
-	height:39px;
-	display: inline-block;
-}
-.page_item_menu9.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover9.png');
-}
-.page_item_menu9:hover{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover9.png');
-	cursor:pointer;
-}
-.page_item_menu10{
-	background:url('wp-content/themes/Avada/images/img/home/menu10.png');
-	width:239px;
-	height:39px;
-	display: inline-block;
-}
-.page_item_menu10.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover10.png');
-}
-.page_item_menu10:hover{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover10.png');
-	cursor:pointer;
-}
-.page_item_menu11{
-    background:url('wp-content/themes/Avada/images/img/home/menu11.png');
-    width:239px;
-    height:39px;
-    display: inline-block;
-}
-.page_item_menu11.current{
-    background:url('wp-content/themes/Avada/images/img/home/menu_hover11.png');
-}
-.page_item_menu11:hover{
-    background:url('wp-content/themes/Avada/images/img/home/menu_hover11.png');
-    cursor:pointer;
-}
-.page_item_menu12{
-    background:url('wp-content/themes/Avada/images/img/home/menu12.png');
-    width:239px;
-    height:39px;
-    display: inline-block;
-}
-.page_item_menu12.current,.page_item_menu12.slug{
-    background:url('wp-content/themes/Avada/images/img/home/menu_hover12.png');
-}
-.page_item_menu12:hover{
-    background:url('wp-content/themes/Avada/images/img/home/menu_hover12.png');
-    cursor:pointer;
-}
+		.nyan{
+		    margin-top:40px;
+		    background: url('wp-content/themes/Avada/images/img/home/jibanyan.png');
+		    width: 249px;
+		    height: 288px;
+		}
 
-.nkb{
-    margin-top:40px;
-    background: url('wp-content/themes/Avada/images/img/home/side_banner_test.gif');
-    width: 241px;
-    height: 103px;
-}
+		.goods_menu{
+		    margin-top: 10px;
+		}
+		
+		.page_item_menu1.current{
+			background:url('wp-content/themes/Avada/images/img/home/menu_hover1.png');
+			cursor:pointer;
+		}
 
-.nyan{
-    margin-top:40px;
-    background: url('wp-content/themes/Avada/images/img/home/jibanyan.png');
-    width: 249px;
-    height: 288px;
-}
+		body.home div#wrapper div#main div.avada-row div#sidebar {
+		    /* margin-top: 12px;  */
+		    float:left !important;
+		    display:inline-flex;
+		}
 
-.goods_menu{
-    margin-top: 10px;
-}
+		#main #sidebar{
+			width: 240px;
+		}
+		
+		#sidebar{
+		        float:right;
+		}
+		
+		#post-goods{
+		    text-align: center;
+		}
+		
+		.goods_nav{
+		    margin: 15px 0 20px 0;
+		    font-weight: bold;
+		}
+		
+		.next, .prev{
+		    color: #325DE6;
+		}
+		
+		.post_det{
+			text-align:left;
+			font-size: 12px;
+			width: 100px;
+			margin: 0 auto;
+		}
 
-.page_item_menu1.current{
-	background:url('wp-content/themes/Avada/images/img/home/menu_hover1.png');
-	cursor:pointer;
-}
+		.title_post a{
+			color: #003AFF !important;
+		}
+		.title_post a:hover{
+			color:#333 !important;
+		}
+		
+		.post_list{
+		    float: left;
+		    width: 165px;
+		    height: 222px;
+		    display: inline-block;
+		    position: relative;
+		    color: #003AFF;
+		    font-size: 14px;
+		    font-weight: bold;
+		}
 
-body.home div#wrapper div#main div.avada-row div#sidebar {
-    /* margin-top: 12px;  */
-    float:left !important;
-    display:inline-flex;
-}
-
-#main #sidebar{
-	width: 240px;
-}
-
-#sidebar{
-        float:right;
-}
-
-#post-goods{
-    text-align: center;
-}
-
-.goods_nav{
-    margin: 15px 0 20px 0;
-    font-weight: bold;
-}
-
-.next, .prev{
-    color: #325DE6;
-}
-
-.post_det{
-	text-align:left;
-	font-size: 12px;
-	width: 100px;
-	margin: 0 auto;
-}
-
-.title_post a{
-	color: #003AFF !important;
-}
-.title_post a:hover{
-	color:#333 !important;
-}
-
-.post_list{
-    float: left;
-    width: 165px;
-    height: 222px;
-    display: inline-block;
-    position: relative;
-    color: #003AFF;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-div.post_img {
-    /* padding-bottom: 5px; */
-    width: 100px;
-	height: 100px;
-	margin-left: auto;
-	margin-right: auto;
-	border: 2px solid #cccccc;
-}
-
-.post_img{
-	width: 100px;
-	height: 100px;
-	margin: 0 auto;
-}
-body.home div.post-new {
-	margin-top: 5px;
-}
-body.home div.post-new img {
-	width: 55px !important;
-}
-#footer{
-	background: url('wp-content/themes/Avada/images/img/footer/footer.png') !important;
-	width: 980px;
-	margin: 0 auto;
-	border-top: 0px !important;
-	height:30px;
-	display:block;
-	position:relative;
-	padding: 0 !important;
-	z-index:9999;
-}
+		div.post_img {
+		    /* padding-bottom: 5px; */
+		    width: 100px;
+			height: 100px;
+			margin-left: auto;
+			margin-right: auto;
+			border: 2px solid #cccccc;
+		}
+		
+		.post_img{
+			width: 100px;
+			height: 100px;
+			margin: 0 auto;
+		}
+		
+		body.home div.post-new {
+			margin-top: 5px;
+		}
+		
+		body.home div.post-new img {
+			width: 55px !important;
+		}
+		
+		#footer{
+			background: url('wp-content/themes/Avada/images/img/footer/footer.png') !important;
+			width: 980px;
+			margin: 0 auto;
+			border-top: 0px !important;
+			height:30px;
+			display:block;
+			position:relative;
+			padding: 0 !important;
+			z-index:9999;
+		}
 
 		/*********************/
+		/*single css style*/
+		.page-title-container{
+			height:87px !important;
+		}
+
+		body.single div#wrapper div#main div.avada-row div#sidebar {
+		    /* margin-top: 12px;  */
+		    float:left !important;
+		    display:inline-flex;
+		}	
+		#wrapper #main{
+			background:#ffffff;
+		 	/* background-repeat: no-repeat !important; 
+			background-size: contain; */
+			margin : 0 auto 0 auto;
+			width: 100%;
+			/* 	max-width: 1349px !important; */
+			background-image:url(./wp-content/themes/Avada/images/img/home/goods_bg.png);
+		}
+		
+		.post{
+			overflow:hidden;
+			border-left:0px!important;
+			border:3px solid rgb(85, 121, 245);
+		/* 	border-bottom:3px solid rgb(85, 121, 245); */
+			background:url(./wp-content/themes/Avada/images/bg_goods.png);
+			display: block;
+			padding: 31px 37px 0px 37px;
+			/* margin-bottom:138px; */
+			
+		/* 	margin-right: 10px; */
+		}
+		.share-box, .about-author, .related-posts, .section, .single-navigation, .comment-container, .page-title-container, .meta-info{
+			display:none;
+		}
+		
+		.single-post #content{
+			float:right!important;
+			width: 660px;
+		    margin-bottom: 0;
+			overflow:hidden;
+		}
+		.single_top_pad {
+			margin-top: -12px;
+		}
+		.cat_img{
+			/*padding: 10px 0 0 15px;*/
+			height: 30px;
+			margin: 0 0 10px 0;
+		}
+		.left{
+			float:left;
+		}
+		.rght_date{
+			/*padding: 0 0 0 100px;*/
+			text-align: right;
+		}
+		p.single-line-meta {
+			margin-top: -6px !important;
+		}
+		.single-line-meta{
+			margin:0px;
+			text-align: right;
+		}
+		.Post_Content{
+			width:582px;
+		}
+		.Con_img_title{
+			width:582px;
+			height:250px;
+		}
+		.left_con_img{
+			width:250px;
+			height:250px;
+			float:left;
+			border:2px solid #cccccc;
+		}
+		.right_con{
+			float:left;
+			margin-left:26px;
+		}
+		.post-new{
+			margin-bottom:10px;
+		}
+		
+		.single-post .Post_title{
+			max-width:302px;
+			overflow:hidden;
+			height:auto;
+		}
+		.single-post .Post_title h1.entry-title{
+			margin-bottom:0px;
+		
+		}
+		.single-post .entry-title,
+		.single-post .titledet_post a{
+			color: #0039FF;
+		}
+		.entry-title{
+			line-height: 38px;
+			margin-top: 0px;
+			margin-bottom: 35px;
+		}
+		.sns_icon{
+			height:32px;
+			width:100%;
+			margin-top:15px;
+		}
+		.sns_icon .fb-like, .sns_icon .tweeter, .sns_icon .medialine{
+			float:left;
+		}
+		iframe#twitter-widget-0 {
+			margin-left: 4px !important;
+		}
+		iframe#twitter-widget-0.twitter-share-button {
+			margin-bottom: 6px;
+			width: 89px !important;
+		}
+		ul.S_img_con{
+			height:100px;
+			list-style-type: none;
+			padding-left:0px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		ul.S_img_con li.s_size	{
+			width:100px;
+			height:100px;
+			display: inline; 
+			
+			overflow:hidden;
+		}
+		.img-container{
+			border:1px solid #cccccc;
+			margin-right:18px;
+			float:left;
+			width:100px;
+			height:100px;
+			 position: relative;
+		    display: inline-block;  
+		    *display: inline;
+		    zoom: 1;
+		}
+		
+		.img-container a img{
+			 display: block;
+			 height:100px;
+		}
+		
+		.text_con{
+			margin-top:50px;
+		}
+		
+		.con_txtone{
+			 font-size:14px;
+			 color:#000000;
+		}
+		
+		.date_con{
+			text-align:left;
+			margin-left:0px;
+			padding-left:0px;
+		}
+		
+		.date_con span{
+			margin-left:-9px;
+			padding-left:0px;
+		}
+		.text_content{
+			padding-top:20px;
+			padding-bottom:20px;
+		}
+		
+		.headbckgrnd{
+			width:578px;
+			height:30px;
+			background-color:#CECECE;
+			color:#FFFFFF;
+			font-size:18px;
+			text-align:center;
+			font-weight:bold;
+			line-height:32px;		
+		}
+		
+		.con_texttwo_img{
+			widht:572px;
+			border-left:4px solid #CECECE;
+			border-right:4px solid #CECECE;
+			border-bottom:4px solid #CECECE;
+			margin-top:90px;
+			height:170px;
+			margin-bottom:38px;
+			
+		}
+		
+		.textcon_two{
+			color:#000000;
+			font-size:14px;
+			margin: 15px;
+		}
+		
+		.postdet_list{
+			display: inline-table;
+			width: 142px;
+			height: 190px;
+		}
+		
+		.postdet_img{
+			width:100px;
+			height:100px;
+			display: inline-block;
+		}
+		
+		.postdet_det{
+			text-align:left;
+		}
+
+		.Product_name{
+			margin-bottom:40px;
+			margin-top: -30px;
+		}
+		
+		.single-post .titledet_post a{
+			font-weight: bold;
+			font-size: 12px;
+		}
+		
+		.single-post .titledet_post{
+			width: 100px;
+		}
+		
+		hr.bord_top {
+			border-top:3px solid rgb(85, 121, 245);
+			margin-left: -36px;
+			margin-top: 6px;
+			width: 655px;
+		}
+		/*********************/
 		/*index inblock style*/
+		
 		body,#nav ul li ul li a,
 			.more,
 			.avada-container h3,
@@ -533,48 +811,8 @@ body.home div.post-new img {
 		}
 
 		#main #sidebar{
-		background-color:transparent;
-	}
-			{/literal}
-		</style>
+			background-color:transparent;
+		}
+		{/literal}
+	</style>
 	</head>
-	<body class="home blog">
-		<div id="wrapper">
-			<div class="header-wrapper">
-				<div class="header-v1">
-					<header id="header">
-						<div class="avada-row" style="margin-top:0px;margin-bottom:0px;">
-							<div class="logo_v1">
-								<div class="face">
-									<img src="wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo" />
-								</div>
-								<div class="goods_logo1"><a href="../index.html" target="_blank"></a></div>
-							</div>
-							<nav id="nav" class="nav-holder">
-								<ul id="nav" class="menu">
-									
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="http://www.youkai-watch.jp/" target="_blank">ゲーム</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://www.corocoro.tv/" target="_blank">マンガ</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="http://ani.tv/youkai-watch/" target="_blank">アニメ</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="http://yw.b-boys.jp/" target="_blank">おもちゃ</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="http://www.ukiukipedia.com"  target="_blank">カード</a></li>
-								</ul>
-							</nav>
-						</div>
-					</header>
-				</div>		</div>
-				<header id="header" class="sticky-header">
-					<div class="avada-row">
-						<div class="logo">
-							<div class="face">
-								<img src="wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo" />
-							</div>
-							<div class="goods_logo"><a href="../index.html" target="_blank"></a></div>
-						</div>
-						
-						<nav id="nav" class="nav-holder">
-							<ul id="nav" class="menu">
-							</ul>
-						</nav>
-					</div>
-				</header>

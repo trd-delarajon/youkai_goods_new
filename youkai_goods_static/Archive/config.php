@@ -4,6 +4,7 @@
 
 	$smarty = new Smarty(); //new object
 	$smarty->template_dir = 'templates';
-	$smarty->compile_dir = 'cache';
-
+	$smarty->compile_dir = 'cache2';
+	
+	
  ?>
