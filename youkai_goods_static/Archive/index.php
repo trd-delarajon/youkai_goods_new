@@ -2,7 +2,7 @@
 
 	require_once("config.php");
 	include __DIR__ .'/youkaiClass.php';
-	define('NEW_STATUS','wp-content/themes/Avada/images/img/new_icon.png');
+	define('NEW_STATUS','../../wp-content/themes/Avada/images/img/new_icon.png');
 	$youkai = new youkaiClass();
 	$data;
 	$csvFile;

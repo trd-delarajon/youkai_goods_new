@@ -7,7 +7,7 @@
 						<div class="avada-row" style="margin-top:0px;margin-bottom:0px;">
 							<div class="logo_v1">
 								<div class="face">
-									<img src="../wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo" />
+									<img src="../../wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo" />
 								</div>
 								<div class="goods_logo1"><a href="../index.html" target="_blank"></a></div>
 							</div>

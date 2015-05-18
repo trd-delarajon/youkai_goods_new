@@ -1,3 +1,30 @@
+<?php /* Smarty version 3.1.23, created on 2015-05-18 12:05:47
+         compiled from "templates/header.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:13638673435559b97b238863_84317866%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'dc45fabc061dbee28fe5be7f51d587eaa06073b4' => 
+    array (
+      0 => 'templates/header.tpl',
+      1 => 1431943487,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '13638673435559b97b238863_84317866',
+  'has_nocache_code' => false,
+  'version' => '3.1.23',
+  'unifunc' => 'content_5559b97b2c92a1_76131077',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_5559b97b2c92a1_76131077')) {
+function content_5559b97b2c92a1_76131077 ($_smarty_tpl) {
+?>
+<?php
+$_smarty_tpl->properties['nocache_hash'] = '13638673435559b97b238863_84317866';
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 	<head>
@@ -9,7 +36,7 @@
 		<meta name="keywords" content="妖怪ウォッチ,グッズ,アイテム,妖怪ワールド,アニメ,妖怪,ようかい." />
 		<meta name="description" content="妖怪ウォッチのポータルサイト「妖怪ワールド」です。妖怪ウォッチ関連のグッズ、アイテムをご紹介！" />
 		<style type="text/css">
-		{literal}
+		
 		body {
 	        margin:0;
 	        color:#747474;
@@ -813,6 +840,8 @@
 		#main #sidebar{
 			background-color:transparent;
 		}
-		{/literal}
+		
 	</style>
-	</head>
+	</head><?php }
+}
+?>
