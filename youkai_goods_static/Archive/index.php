@@ -4,8 +4,10 @@
 	require_once("gen.php");
 
 
-	$csv = readCSV($csvFile);
-	$smarty->assign('csvarr', $csv);
+	 $csvdata = readCSV($csvFile);//function gen.php
+	 $smarty->assign('csvdata', $csvdata);
+	
+
 	$smarty->display('index.tpl');
 
  ?>

@@ -1,4 +1,26 @@
-{include file="header.tpl"}
+<?php /* Smarty version Smarty-3.1.21, created on 2015-05-19 02:18:04
+         compiled from "templates/index.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:632110897555a32531b1d52-73098090%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'd4e3f7f00c8e698ede8101a2ee17b64823a03d5d' => 
+    array (
+      0 => 'templates/index.tpl',
+      1 => 1431994678,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '632110897555a32531b1d52-73098090',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.21',
+  'unifunc' => 'content_555a325325a287_09380524',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_555a325325a287_09380524')) {function content_555a325325a287_09380524($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 <body class="home blog">
 	<div id="wrapper">
 		<div class="header-wrapper">
@@ -53,7 +75,8 @@
 											<div class="post-content-container">
 												<div class="goods_nav">
 
-												{php}
+												<?php $_smarty_tpl->smarty->_tag_stack[] = array('php', array()); $_block_repeat=true; echo smarty_php_tag(array(), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+
 															global $csvdata, $start_from, $num_rec_per_page, $page;
 
 															$num_rec_per_page=4;
@@ -96,7 +119,8 @@
 												
 												</div>';
 												}
-												{/php}
+												<?php $_block_content = ob_get_clean(); $_block_repeat=false; echo smarty_php_tag(array(), $_block_content, $_smarty_tpl, $_block_repeat); } array_pop($_smarty_tpl->smarty->_tag_stack);?>
+
 												
 											</div>
 											<div style="clear:both;"></div>
@@ -110,5 +134,7 @@
 						<br />
 					</div>
 				</div>
-				{include file="sidebar.tpl"}
-				{include file="footer.tpl"}
+				<?php echo $_smarty_tpl->getSubTemplate ("sidebar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+				<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+<?php }} ?>

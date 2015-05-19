@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.23, created on 2015-05-15 23:40:28
+<?php /* Smarty version 3.1.23, created on 2015-05-16 00:58:13
          compiled from "templates/header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1414724307555667cc065bd0_66555393%%*/
+/*%%SmartyHeaderCode:83442328255567a05936ae2_74745359%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,21 +9,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '94a2218aadc0c376be6864559a2f908b6c1f0fcf' => 
     array (
       0 => 'templates/header.tpl',
-      1 => 1431725776,
+      1 => 1431730625,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1414724307555667cc065bd0_66555393',
+  'nocache_hash' => '83442328255567a05936ae2_74745359',
   'has_nocache_code' => false,
   'version' => '3.1.23',
-  'unifunc' => 'content_555667cc100ce6_13264271',
+  'unifunc' => 'content_55567a05986609_20018436',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_555667cc100ce6_13264271')) {
-function content_555667cc100ce6_13264271 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_55567a05986609_20018436')) {
+function content_55567a05986609_20018436 ($_smarty_tpl) {
 ?>
 <?php
-$_smarty_tpl->properties['nocache_hash'] = '1414724307555667cc065bd0_66555393';
+$_smarty_tpl->properties['nocache_hash'] = '83442328255567a05936ae2_74745359';
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
@@ -565,45 +565,6 @@ body.home div.post-new img {
 			
 		</style>
 	</head>
-	<body class="home blog">
-		<div id="wrapper">
-			<div class="header-wrapper">
-				<div class="header-v1">
-					<header id="header">
-						<div class="avada-row" style="margin-top:0px;margin-bottom:0px;">
-							<div class="logo_v1">
-								<div class="face">
-									<img src="wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo" />
-								</div>
-								<div class="goods_logo1"><a href="../index.html" target="_blank"></a></div>
-							</div>
-							<nav id="nav" class="nav-holder">
-								<ul id="nav" class="menu">
-									
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="http://www.youkai-watch.jp/" target="_blank">ゲーム</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://www.corocoro.tv/" target="_blank">マンガ</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="http://ani.tv/youkai-watch/" target="_blank">アニメ</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="http://yw.b-boys.jp/" target="_blank">おもちゃ</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="http://www.ukiukipedia.com"  target="_blank">カード</a></li>
-								</ul>
-							</nav>
-						</div>
-					</header>
-				</div>		</div>
-				<header id="header" class="sticky-header">
-					<div class="avada-row">
-						<div class="logo">
-							<div class="face">
-								<img src="wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo" />
-							</div>
-							<div class="goods_logo"><a href="../index.html" target="_blank"></a></div>
-						</div>
-						
-						<nav id="nav" class="nav-holder">
-							<ul id="nav" class="menu">
-							</ul>
-						</nav>
-					</div>
-				</header><?php }
+	<?php }
 }
 ?>
