@@ -79,7 +79,7 @@ if (!defined('SMARTY_RESOURCE_DATE_FORMAT')) {
  */
 if (!class_exists('Smarty_Autoloader', false)) {
     if (!class_exists('Smarty_Internal_Data', true)) {
-        require_once '../Archive/smarty/libs/Autoloader.php';
+        require_once 'smarty/libs/Autoloader.php';
         Smarty_Autoloader::registerBC();
     }
 }

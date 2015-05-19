@@ -59,20 +59,55 @@
 												{if $indexPage == $var}
 													<span class="page-numbers current">{$indexPage}</span>
 												{else}
-													<a class="page-numbers" href="#">{$var}</a>
+													<a class="page-numbers" href="{$indexLink}{$var}.html">{$var}</a>
 												{/if}
 											{/for}
 										{else}
-											{for $var=1 to $numIndex max=3}
-												{if $indexPage == $var}
-													<span class="page-numbers current">{$indexPage}</span>
-												{else}
-													<a class="page-numbers" href="#">{$var}</a>
-												{/if}
-											{/for}
-											<span class="page-numbers dots">…</span>
-											<a class="page-numbers" href="#">{$numIndex}</a>
-											<a class="next page-numbers" href="#">次へ »</a>
+											{if $indexPage > 1}
+												<a class="prev page-numbers" href="{$indexLink}{$indexPage-1}.html">« 前へ</a>
+											{/if}
+
+											{if $indexPage >= 5}
+												<a class="page-numbers" href="{$indexLink}1.html">1</a>
+												<span class="page-numbers dots">…</span>
+											{/if}
+
+											{if $indexPage >= 5}
+												{for $var=$indexPage-2 to $numIndex max=5}
+													{if $indexPage == $var}
+														<span class="page-numbers current">{$indexPage}</span>
+													{elseif $var != $numIndex}
+														<a class="page-numbers" href="{$indexLink}{$var}.html">{$var}</a>
+													{/if}
+												{/for}
+											{elseif $indexPage <= ($numIndex*0.70)}
+												{for $var=1 to $numIndex max=3+($indexPage-1)}
+													{if $indexPage == $var}
+														<span class="page-numbers current">{$indexPage}</span>
+													{elseif $var != $numIndex}
+														<a class="page-numbers" href="{$indexLink}{$var}.html">{$var}</a>
+													{/if}
+												{/for}
+											{else}
+												{for $var=$indexPage to $numIndex}
+													{if $indexPage == $var}
+														<span class="page-numbers current">{$indexPage}</span>
+													{elseif $var != $numIndex}
+														<a class="page-numbers" href="{$indexLink}{$var}.html">{$var}</a>
+													{/if}
+												{/for}
+											{/if}
+
+											{if $indexPage <= ($numIndex*0.72)}
+												<span class="page-numbers dots">…</span>
+											{/if}
+											
+											{if $indexPage != $numIndex}
+												<a class="page-numbers" href="{$indexLink}{$numIndex}.html">{$numIndex}</a>
+											{/if}
+											{if $indexPage != $numIndex}
+												<a class="next page-numbers" href="{$indexLink}{$indexPage+1}.html">次へ »</a>
+											{/if}		
 										{/if}
 									</div>
 										{for $var=0 to $maxItem-1}

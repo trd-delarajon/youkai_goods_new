@@ -34,7 +34,7 @@
 		}
 
 		public function setTotal_items(){
-			$this->total_items = count($this->CSV_data)+1;
+			$this->total_items = count($this->CSV_data);
 		}
 
 		public function getTotal_items(){

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ƒ<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
