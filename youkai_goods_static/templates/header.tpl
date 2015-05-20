@@ -188,7 +188,7 @@
 		}
 
 		div#wrapper div#main div.avada-row {
-		   /*  background-image: url(/wp-content/themes/Avada/images/img/home/goods_bg.png); */
+		   /*  background-image: url(../../wp-content/themes/Avada/images/img/home/goods_bg.png); */
 		    width:980px;
 		    padding-bottom: 50px;
 		    max-width:980px;
