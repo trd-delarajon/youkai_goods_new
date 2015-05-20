@@ -1,4 +1,5 @@
-{include file="header.tpl"}
+{include file="header3.tpl"}
+</head>
 <body class="single single-post postid-2218 single-format-standard" data-twttr-rendered="true">
 	<div id="wrapper">
 		<div class="header-wrapper">

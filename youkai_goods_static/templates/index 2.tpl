@@ -1,35 +1,4 @@
-{include file="header 2.tpl"}
-{literal}
-<style>
-			#post-goods{
-			text-align: center;
-			}
-			.post_list{
-			float: left;
-			width: 165px;
-			height: 222px;
-			display: inline-block;
-			position: relative;
-			color: #003AFF;
-			font-size: 14px;
-			font-weight: bold;
-			}
-			div.post_img {
-			width: 100px;
-			height: 100px;
-			margin-left: auto;
-			margin-right: auto;
-			border: 2px solid #cccccc;
-			}
-
-			.post_img{
-			width: 100px;
-			height: 100px;
-			margin: 0 auto;
-			}
-</style>
-{/literal}
-</head>
+{include file="header.tpl"}
 <body class="home blog">
 		<div id="wrapper">
 			<div class="header-wrapper">
@@ -94,54 +63,19 @@
 												{/if}
 											{/for}
 										{else}
-											{if $indexPage > 1}
-												<a class="prev page-numbers" href="{$indexLink}{$indexPage-1}.html">« 前へ</a>
-											{/if}
-
-											{if $indexPage >= 5}
-												<a class="page-numbers" href="{$indexLink}1.html">1</a>
-												<span class="page-numbers dots">…</span>
-											{/if}
-
-											{if $indexPage >= 5}
-												{for $var=$indexPage-2 to $numIndex max=5}
-													{if $indexPage == $var}
-														<span class="page-numbers current">{$indexPage}</span>
-													{elseif $var != $numIndex}
-														<a class="page-numbers" href="{$indexLink}{$var}.html">{$var}</a>
-													{/if}
-												{/for}
-											{elseif $indexPage <= ($numIndex*0.70)}
-												{for $var=1 to $numIndex max=3+($indexPage-1)}
-													{if $indexPage == $var}
-														<span class="page-numbers current">{$indexPage}</span>
-													{elseif $var != $numIndex}
-														<a class="page-numbers" href="{$indexLink}{$var}.html">{$var}</a>
-													{/if}
-												{/for}
-											{else}
-												{for $var=$indexPage to $numIndex}
-													{if $indexPage == $var}
-														<span class="page-numbers current">{$indexPage}</span>
-													{elseif $var != $numIndex}
-														<a class="page-numbers" href="{$indexLink}{$var}.html">{$var}</a>
-													{/if}
-												{/for}
-											{/if}
-
-											{if $indexPage <= ($numIndex*0.72)}
-												<span class="page-numbers dots">…</span>
-											{/if}
-											
-											{if $indexPage != $numIndex}
-												<a class="page-numbers" href="{$indexLink}{$numIndex}.html">{$numIndex}</a>
-											{/if}
-											{if $indexPage != $numIndex}
-												<a class="next page-numbers" href="{$indexLink}{$indexPage+1}.html">次へ »</a>
-											{/if}		
+											{for $var=1 to $numIndex max=3}
+												{if $indexPage == $var}
+													<span class="page-numbers current">{$indexPage}</span>
+												{else}
+													<a class="page-numbers" href="{$indexLink}{$var}.html">{$var}</a>
+												{/if}
+											{/for}
+											<span class="page-numbers dots">…</span>
+											<a class="page-numbers" href="{$indexLink}{$var}.html">{$numIndex}</a>
+											<a class="next page-numbers" href="{$indexLink}{$indexPage+1}.html">次へ »</a>
 										{/if}
 									</div>
-										{for $var=0 to $maxItem-1}
+										{for $var=0 to $maxItem}
 											<div class="post_list">
 												<div class="post_img">
 													<a href="{$singleLink[$var]}"><img alt="main_image" src="{$csvData[$var][0]}"></a>
