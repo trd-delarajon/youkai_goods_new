@@ -1,34 +1,42 @@
 <?
 	define('LINK_PATH', dirname(__FILE__));
-	define('MAX_ITEM', 4);
+	define('MAX_ITEM', 20);
 	Class youkaiClass {
-		// const linkpath = dirname(__FILE__).'';
 		private $CSV_data;
 		private $single_page_link;
 		private $total_items;
 		private $total_index;
-
-		// public function __construct(){
-		// 	$single_page_link = array();
-		// }
-
+		private $prod_desc_array;
+		private $img_path_array;
+		private $external_links_array;
+		private $external_links_label_array;
+		
+		
 		public function setCSVData($indexdata){
 			$this->CSV_data = $indexdata;
-			$this->processLinks();
 			$this->setTotal_items();
 			$this->setTotal_index();
+			$this->process();
 		}
 
 		public function getCSVData(){
 			return $this->CSV_data;
 		}
 
-		public function processLinks(){
-			for ($link=0; $link < count($this->CSV_data); $link++) { 
-				$this->single_page_link[] = LINK_PATH .'/' .$link;
+		public function process(){
+			for ($index=0; $index < count($this->CSV_data); $index++) {
+				$desc_arr = explode("\\n", $this->CSV_data[$index][5]);
+				$img_arr = explode("\\n", $this->CSV_data[$index][1]);
+				$ext_link_arr = explode("\\n", $this->CSV_data[$index][8]);
+				$ext_link_lbl_arr = explode("\\n", $this->CSV_data[$index][9]);
+				$this->prod_desc_array[$index] = $desc_arr;
+				$this->img_path_array[$index] = $img_arr;
+				$this->external_links_array[$index] = $ext_link_arr;
+				$this->external_links_label_array[$index] = $ext_link_lbl_arr;
+				$this->single_page_link[$index] = LINK_PATH .'/' .$index;
 			}
 		}
-
+		
 		public function getSingle_page_link(){
 			return $this->single_page_link;
 		}
@@ -51,6 +59,22 @@
 
 		public function getMaxItem(){
 			return MAX_ITEM;
+		}
+		
+		public function getProd_Desc_Array(){
+			return $this->prod_desc_array;
+		}
+		
+		public function getImg_Path_Array(){
+			return $this->img_path_array;
+		}
+		
+		public function getExternal_Links_Array(){
+			return $this->external_links_array;
+		}
+		
+		public function getExternal_Links_Label_Array(){
+			return $this->external_links_label_array;
 		}
 	}
 ?>
