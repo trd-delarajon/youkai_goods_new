@@ -6,5 +6,4 @@
 	$smarty->template_dir = 'templates';
 	$smarty->compile_dir = 'cache';
 	
-	
  ?>

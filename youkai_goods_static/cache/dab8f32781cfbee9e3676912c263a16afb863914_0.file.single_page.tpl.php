@@ -1,4 +1,43 @@
-{include file="header.tpl"}
+<?php /* Smarty version 3.1.23, created on 2015-05-21 09:24:52
+         compiled from "templates/single_page.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:539757355555d884431f0d5_54515621%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'dab8f32781cfbee9e3676912c263a16afb863914' => 
+    array (
+      0 => 'templates/single_page.tpl',
+      1 => 1432193089,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '539757355555d884431f0d5_54515621',
+  'variables' => 
+  array (
+    'indexItem' => 0,
+    'img_path_array' => 0,
+    'csvData' => 0,
+    'newIcon' => 0,
+    'var' => 0,
+    'prod_desc_array' => 0,
+    'external_links_array' => 0,
+    'external_links_label_array' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => '3.1.23',
+  'unifunc' => 'content_555d88443e46e5_43079229',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_555d88443e46e5_43079229')) {
+function content_555d88443e46e5_43079229 ($_smarty_tpl) {
+?>
+<?php
+$_smarty_tpl->properties['nocache_hash'] = '539757355555d884431f0d5_54515621';
+echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+?>
+
 </head>
 <body class="single single-post postid-2218 single-format-standard" data-twttr-rendered="true">
 	<div id="wrapper">
@@ -66,63 +105,85 @@
 								
 								<div class="Post_Content">
 									<div class="Con_img_title">
-										<div class="left_con_img"><a class="fancybox-thumb" style="display:block!important;" rel="fancybox-thumb" href="{$img_path_array[$indexItem][0]}"><img width="250" height="250" src="{$img_path_array[$indexItem][0]}"></a></div>
+										<div class="left_con_img"><a class="fancybox-thumb" style="display:block!important;" rel="fancybox-thumb" href="<?php echo $_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value][0];?>
+"><img width="250" height="250" src="<?php echo $_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value][0];?>
+"></a></div>
 										<div class="right_con">
-											{if $csvData[2] == '1'}
+											<?php if ($_smarty_tpl->tpl_vars['csvData']->value[2]=='1') {?>
 												<div class="post-new">
-													<img alt="youkai_new_show_important" src="{$newIcon}">	
+													<img alt="youkai_new_show_important" src="<?php echo $_smarty_tpl->tpl_vars['newIcon']->value;?>
+">	
 												</div>
-											{else}
+											<?php } else { ?>
 												<div class="post-new">
 												</div>
-											{/if}
-											<div class="Post_title"><h1 class="entry-title">{$csvData[3]}</h1></div>
+											<?php }?>
+											<div class="Post_title"><h1 class="entry-title"><?php echo $_smarty_tpl->tpl_vars['csvData']->value[3];?>
+</h1></div>
 										</div>
 									</div>
 									<div class="small_con_img">
-										{if count($img_path_array[$indexItem]) != 1}
+										<?php if (count($_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value])!=1) {?>
 											<ul class="S_img_con">
-												{for $var=0 to count($img_path_array[$indexItem])-1}
-													{if $var != 0}
+												<?php $_smarty_tpl->tpl_vars['var'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? count($_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value])-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value])-1)+1)/abs($_smarty_tpl->tpl_vars['var']->step));
+if ($_smarty_tpl->tpl_vars['var']->total > 0) {
+for ($_smarty_tpl->tpl_vars['var']->value = 0, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
+$_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration == 1;$_smarty_tpl->tpl_vars['var']->last = $_smarty_tpl->tpl_vars['var']->iteration == $_smarty_tpl->tpl_vars['var']->total;?>
+													<?php if ($_smarty_tpl->tpl_vars['var']->value!=0) {?>
 													<li class="s_size S_img1">
 														<div class="img-container">
-															<a class="fancybox-thumb" rel="fancybox-thumb" href="{$img_path_array[$indexItem][$var]}"><img width="100" height="100" src="{$img_path_array[$indexItem][$var]}"></a>
+															<a class="fancybox-thumb" rel="fancybox-thumb" href="<?php echo $_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value][$_smarty_tpl->tpl_vars['var']->value];?>
+"><img width="100" height="100" src="<?php echo $_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value][$_smarty_tpl->tpl_vars['var']->value];?>
+"></a>
 														</div>
 													</li>
-													{/if}
-												{/for}
+													<?php }?>
+												<?php }} ?>
 											</ul>
-										{/if}
+										<?php }?>
 									</div>
 									<div class="text_con">
 										<div class="con_txtone">
 											<div class="date_con">
-												<span>{$csvData[6]}</span>
+												<span><?php echo $_smarty_tpl->tpl_vars['csvData']->value[6];?>
+</span>
 											</div>
 											<div class="text_content">
-												{if $csvData[4] != "null"}
-													<p>{$csvData[4]}</p>
+												<?php if ($_smarty_tpl->tpl_vars['csvData']->value[4]!="null") {?>
+													<p><?php echo $_smarty_tpl->tpl_vars['csvData']->value[4];?>
+</p>
 													<p>&nbsp;</p>
-												{/if}
-												{for $var=0 to count($prod_desc_array[$indexItem])-1}
-													<p>{$prod_desc_array[$indexItem][$var]}</p>
-												{/for}
-												{if $external_links_array[$indexItem][0] != "null"}
+												<?php }?>
+												<?php $_smarty_tpl->tpl_vars['var'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? count($_smarty_tpl->tpl_vars['prod_desc_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value])-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['prod_desc_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value])-1)+1)/abs($_smarty_tpl->tpl_vars['var']->step));
+if ($_smarty_tpl->tpl_vars['var']->total > 0) {
+for ($_smarty_tpl->tpl_vars['var']->value = 0, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
+$_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration == 1;$_smarty_tpl->tpl_vars['var']->last = $_smarty_tpl->tpl_vars['var']->iteration == $_smarty_tpl->tpl_vars['var']->total;?>
+													<p><?php echo $_smarty_tpl->tpl_vars['prod_desc_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value][$_smarty_tpl->tpl_vars['var']->value];?>
+</p>
+												<?php }} ?>
+												<?php if ($_smarty_tpl->tpl_vars['external_links_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value][0]!="null") {?>
 													<p>&nbsp;</p>
-													{for $var=0 to count($external_links_array[$indexItem])-1}
+													<?php $_smarty_tpl->tpl_vars['var'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? count($_smarty_tpl->tpl_vars['external_links_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value])-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['external_links_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value])-1)+1)/abs($_smarty_tpl->tpl_vars['var']->step));
+if ($_smarty_tpl->tpl_vars['var']->total > 0) {
+for ($_smarty_tpl->tpl_vars['var']->value = 0, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
+$_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration == 1;$_smarty_tpl->tpl_vars['var']->last = $_smarty_tpl->tpl_vars['var']->iteration == $_smarty_tpl->tpl_vars['var']->total;?>
 														<address>
 															<strong>
-																<a href="{$external_links_array[$indexItem][$var]}" target="_blank"><font>{$external_links_label_array[$indexItem][$var]}</font></a>
+																<a href="<?php echo $_smarty_tpl->tpl_vars['external_links_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value][$_smarty_tpl->tpl_vars['var']->value];?>
+" target="_blank"><font><?php echo $_smarty_tpl->tpl_vars['external_links_label_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value][$_smarty_tpl->tpl_vars['var']->value];?>
+</font></a>
 															</strong>
 														</address>
-														{if $var != count($external_links_array[$indexItem])-1}
+														<?php if ($_smarty_tpl->tpl_vars['var']->value!=count($_smarty_tpl->tpl_vars['external_links_array']->value[$_smarty_tpl->tpl_vars['indexItem']->value])-1) {?>
 															<address>&nbsp;</address>
-														{/if}
-													{/for}
-												{/if}
+														<?php }?>
+													<?php }} ?>
+												<?php }?>
 											</div>
 											<div class="text_price">
-												■価格:{if $csvData[7] != "null"}{$csvData[7]}{/if}
+												■価格:<?php if ($_smarty_tpl->tpl_vars['csvData']->value[7]!="null") {
+echo $_smarty_tpl->tpl_vars['csvData']->value[7];
+}?>
 											</div>
 										</div>
 										<div class="con_texttwo_img">
@@ -252,5 +313,11 @@
 							</div>
 						</div>
 					</div>
-					{include file="sidebar.tpl"}
-					{include file="footer.tpl"}
+					<?php echo $_smarty_tpl->getSubTemplate ("sidebar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+?>
+
+					<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
+?>
+<?php }
+}
+?>

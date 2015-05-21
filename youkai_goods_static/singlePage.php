@@ -1,8 +1,23 @@
 <?php
-require_once("config.php");
-define('FILE_PATH2', dirname(__FILE__).'/HTML-Files/HTML_version');
-define('INDEX_LINK', 'single');
+// Comparison function
+function cmp($a, $b) {
+	if ($a == $b) {
+		return 0;
+	}
+	return ($a < $b) ? -1 : 1;
+}
 
-	
-	file_put_contents(FILE_PATH2."/".INDEX_LINK.".html", $smarty->fetch('single_page.tpl'));
+// Array to be sorted
+$array = array('a' => 4, 'b' => 8, 'c' => -1, 'd' => -9, 'e' => 2, 'f' => 5, 'g' => 3, 'h' => -4);
+echo '<pre>';
+print_r($array);
+echo '</pre>';
+
+// Sort and print the resulting array
+uasort($array, 'cmp');
+
+echo '<pre>';
+print_r($array);
+echo '</pre>';
+
 ?>

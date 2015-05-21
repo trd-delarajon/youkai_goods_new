@@ -28,6 +28,12 @@ include __DIR__ .'/youkaiClass.php';
 // 	echo '</pre>';
 	$myArray[0] = $youkai->getCSVData()[0];
 	$myArray[1] = $youkai->getCSVData()[5];
+	
+	echo '<h1>hello general</h1>';
+	echo '<pre>';
+	print_r($youkai->getCSVData());
+	echo '</pre>';
+	
 	echo '<h1>hello</h1>';
 	echo '<pre>';
 	print_r($youkai->getProd_Desc_Array());
@@ -46,5 +52,35 @@ include __DIR__ .'/youkaiClass.php';
 	echo '<h1>hello external links label</h1>';
 	echo '<pre>';
 	print_r($youkai->getExternal_Links_Label_Array());
+	echo '</pre>';
+	
+	echo '<h1>number of img inside array</h1>';
+	echo '<pre>';
+	echo count($youkai->getImg_Path_Array()[0]);
+	echo '</pre>';
+	
+	echo '<h1>Hello SinglePage Link</h1>';
+	echo '<pre>';
+	print_r($youkai->getSingle_page_link());
+	echo '</pre>';
+	
+	$foo = array("Robert" => $youkai->getExternal_Links_Array(), "Seppo" => $youkai->getExternal_Links_Label_Array());
+	$bar = each($foo);
+	echo '<pre>';
+	print_r($foo);
+	echo '</pre>';
+	
+	function categ($var){
+		return ($var[0] === "prize");
+	}
+	
+	function myfunction($v)
+	{
+		
+	}
+
+	echo '<h1>Hello Category</h1>';
+	echo '<pre>';
+	print_r(array_filter( $youkai->getCSVData(),"categ"));
 	echo '</pre>';
 ?>

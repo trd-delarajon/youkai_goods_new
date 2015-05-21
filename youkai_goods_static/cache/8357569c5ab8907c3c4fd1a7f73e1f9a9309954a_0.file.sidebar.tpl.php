@@ -1,3 +1,30 @@
+<?php /* Smarty version 3.1.23, created on 2015-05-21 09:23:14
+         compiled from "templates/sidebar.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:1863065003555d87e213c3e5_63418488%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '8357569c5ab8907c3c4fd1a7f73e1f9a9309954a' => 
+    array (
+      0 => 'templates/sidebar.tpl',
+      1 => 1432112169,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1863065003555d87e213c3e5_63418488',
+  'has_nocache_code' => false,
+  'version' => '3.1.23',
+  'unifunc' => 'content_555d87e219a870_15374975',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_555d87e219a870_15374975')) {
+function content_555d87e219a870_15374975 ($_smarty_tpl) {
+?>
+<?php
+$_smarty_tpl->properties['nocache_hash'] = '1863065003555d87e213c3e5_63418488';
+?>
 <div id="sidebar" style="float:right;">
 	
 	<div id="sidebar" style="">
@@ -13,7 +40,7 @@
 			<div id="sticker">
 				<a href="index.html"><div class="side1"></div></a>
 				<div class="goods_menu">
-					<div class="page_item_menu1 slug current" href='http://youkai-world.com/goods'></div>
+					<div class="page_item_menu1 slug current" onclick="location.href='http://youkai-world.com/goods'"></div>
 					<div class="page_item_menu2 " onclick="location.href='http://youkai-world.com/goods/products/?slug=toy'"></div>
 					<div class="page_item_menu3 " onclick="location.href='http://youkai-world.com/goods/products/?slug=dcd'"></div>
 					<div class="page_item_menu4 " onclick="location.href='http://youkai-world.com/goods/products/?slug=carddas'"></div>
@@ -35,3 +62,6 @@
 </div>
 </div>
 </div>
+<?php }
+}
+?>

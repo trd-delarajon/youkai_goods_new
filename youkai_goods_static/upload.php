@@ -22,7 +22,7 @@ if (isset($_FILES["csv_file"]))
    		// echo "<pre>";
 	    // print_r($_FILES);
 	?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html> <head>
 
 	 <meta charset="utf-8">
@@ -39,4 +39,4 @@ if (isset($_FILES["csv_file"]))
 	</form>
 	
  </body>
-</html> -->
+</html> 
