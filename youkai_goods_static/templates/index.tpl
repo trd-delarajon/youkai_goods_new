@@ -1,4 +1,4 @@
-{include file="header 2.tpl"}
+{include file="header.tpl"}
 {literal}
 <style>
 			#post-goods{
@@ -141,10 +141,10 @@
 											{/if}		
 										{/if}
 									</div>
-										{for $var=0 to $maxItem-1}
+										{for $var=0 to $maxItem}
 											<div class="post_list">
 												<div class="post_img">
-													<a href="{$singleLink[$var]}"><img alt="main_image" src="{$csvData[$var][0]}"></a>
+													<a href="{$singleLink[$var]}"><img alt="main_image" src="{$img_path_array[$var][0]}"></a>
 												</div>
 												<div class="post_det">
 													{if $csvData[$var][2] == '1'}

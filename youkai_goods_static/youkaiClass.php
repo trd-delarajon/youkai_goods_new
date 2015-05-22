@@ -25,14 +25,14 @@
 
 		public function process(){
 			for ($index=0; $index < count($this->CSV_data); $index++) {
-// 				$desc_arr = explode("\\n", $this->CSV_data[$index][5]);
-// 				$img_arr = explode("\\n", $this->CSV_data[$index][1]);
-// 				$ext_link_arr = explode("\\n", $this->CSV_data[$index][8]);
-// 				$ext_link_lbl_arr = explode("\\n", $this->CSV_data[$index][9]);
-// 				$this->prod_desc_array[$index] = $desc_arr;
-// 				$this->img_path_array[$index] = $img_arr;
-// 				$this->external_links_array[$index] = $ext_link_arr;
-// 				$this->external_links_label_array[$index] = $ext_link_lbl_arr;
+				$desc_arr = explode("\\n", $this->CSV_data[$index][5]);
+				$img_arr = explode("\\n", $this->CSV_data[$index][1]);
+				$ext_link_arr = explode("\\n", $this->CSV_data[$index][8]);
+				$ext_link_lbl_arr = explode("\\n", $this->CSV_data[$index][9]);
+				$this->prod_desc_array[$index] = $desc_arr;
+				$this->img_path_array[$index] = $img_arr;
+				$this->external_links_array[$index] = $ext_link_arr;
+				$this->external_links_label_array[$index] = $ext_link_lbl_arr;
 				$this->single_page_link[$index] = LINK_PATH .'/' .$index;
 			}
 		}
