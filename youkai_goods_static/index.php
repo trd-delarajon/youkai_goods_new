@@ -21,7 +21,7 @@
 		$youkai->setCSVData($data);
 	}
 
-	$csvFile = 'csv_file/sampleData2.csv';
+	$csvFile = 'csv_file/sampleData.csv';
 	readCSV($csvFile);
 	$CSVDATA = $youkai->getCSVData();
 	$CSVSingleLink = $youkai->getSingle_page_link();
@@ -42,7 +42,7 @@
 		$pageIndex=1;
 		$dataToSmarty;
 		$singleLinkSmarty;
-		$HtmlOutput;
+		$HtmlOutput = array();
 		for( $var=0;$var < $total_item; $var++){
 			$dataToSmarty[] =  $CSVDATA[$var];
 			$singleLinkSmarty[] = $CSVSingleLink[$var];
@@ -55,12 +55,32 @@
 				$smarty->assign('indexPage', $pageIndex++);
 				$smarty->assign('newIcon', NEW_STATUS);
 				$smarty->assign('indexLink', INDEX_LINK);
+				echo '$max_item '.$max_item.'<br>';
+				echo '$total_index '.$total_index.'<br>';
+				echo '$pageIndex '.$pageIndex.'<br>';
 				$HtmlOutput[] = $smarty->fetch('index.tpl');
 				$dataToSmarty = null;
 				$singleLinkSmarty = null;
 				$counter=-1;
 			}
 			$counter++;
+		}
+		if($counter > 0){
+			$smarty->assign('csvData', $dataToSmarty);
+			$smarty->assign('singleLink',$singleLinkSmarty);
+			$smarty->assign('maxItem', $max_item);
+			$smarty->assign('numIndex', $total_index);
+			$smarty->assign('img_path_array', $img_path_array);
+			$smarty->assign('indexPage', $pageIndex++);
+			$smarty->assign('newIcon', NEW_STATUS);
+			$smarty->assign('indexLink', INDEX_LINK);
+			echo '$max_item '.$max_item.'<br>';
+			echo '$total_index '.$total_index.'<br>';
+			echo '$pageIndex '.$pageIndex.'<br>';
+			$HtmlOutput[] = $smarty->fetch('index.tpl');
+			$dataToSmarty = null;
+			$singleLinkSmarty = null;
+			$counter=-1;
 		}
 		return $HtmlOutput;
 	}
@@ -104,79 +124,62 @@
 			$category = $category_list[$index];
 			$categories[$category] = array_filter($youkai->getCSVData(), function($csvdata) use ($category) { return $csvdata[0] === $category ;});
 		}
+		$itemIndex = array_keys($categories[$category_list[0]]);
 		//takes care of removing NULL array elements
-// 		$categories = array_filter($categories);
+		//$categories = array_filter($categories);
+		echo '<pre>';
+		print_r($categories);
+		echo '</pre>';
+		echo '<pre>';
+		print_r(count($categories['toy']));
+		echo '</pre>';
+		echo '<pre>';
+		echo '<h1>hello</h1>';
+		print_r($categories['toy']);
+		echo '</pre>';
+		echo '<pre>';
+		echo '<h1>$itemIndex</h1>';
+		print_r($itemIndex);
+		echo '</pre>';
 		
-		for($var=0;$var < count($category_list); $var++){
-			if(!empty($categories[$category_list[$var]])){
-				$itemIndex = array_keys($categories[$category_list[$var]]);
-				for ($counter=0;$counter < count($categories[$category_list[$var]]); $counter++){
-					
-					if($counter != MAX_ITEM_CATEG){
-						$dataToSmarty[] = $categories[$category_list[$var]][$itemIndex[$counter]];
+		$temp;
+		$temp2;
+		
+		for($var2=0;$var2 < count($category_list); $var2++){
+			if($category_list[$var2] == "toy"){
+				for($var=0; $var < count($categories['toy']); $var++){
+					if($var != MAX_ITEM_CATEG){
+						$dataToSmarty[] = $categories['toy'][$itemIndex[$var]];
+						$temp[] = $img_path_array[$itemIndex[$var]][0];
+						$temp2[] = $CSVSingleLink[$itemIndex[$var]];
 					}
-					$smarty->assign('itemIndex',$itemIndex);
-					$smarty->assign('dataToSmarty',$dataToSmarty);
-					$smarty->assign('img_path_array', $img_path_array);
-					$smarty->assign('singleLinkSmarty', $CSVSingleLink);
-					$smarty->assign('newIcon', NEW_STATUS);
-					$htmlOutput[$category_list[$var]] = $smarty->fetch('category.tpl');
-					$dataToSmarty = null;
-					$itemIndex = null;
 				}
-			
-// 				foreach($categories[$category_list[$var]] as $values=>$keys){
-// 					$dataToSmarty[] = $keys;
-// 				}
-// 				$smarty->assign('itemIndex',array_keys($categories[$category_list[$var]]));
-// 				$smarty->assign('dataToSmarty',$dataToSmarty);
-// 				$smarty->assign('img_path_array', $img_path_array);
-// 				$smarty->assign('singleLinkSmarty', $CSVSingleLink);
-// 				$smarty->assign('max_item', MAX_ITEM_CATEG);
-// 				$smarty->assign('newIcon', NEW_STATUS);
-// 				$htmlOutput[$category_list[$var]] = $smarty->fetch('single_page.tpl');
-// 				echo '<h1>HELLO</h1>';
-// 				echo '<pre>';
-// 				echo '<h1>HELLO1</h1>';
-// 				print_r(count($categories[$category_list[$var]]));
-// 				echo '<h1>HELLO2</h1>';
-// 				print_r($dataToSmarty);
-// 				print_r(array_keys($categories[$category_list[$var]]));
-// 				echo '</pre>';
-				
-// 				foreach ($dataToSmarty as $value){
-// 					echo '<pre>';
-// 					print_r($dataToSmarty);
-// 					echo '</pre>';
-// 				}
-				
 			}
-			
-			return $htmlOutput;
 		}
 		
+		echo '<pre>';
+		echo '<h1>$$dataToSmarty</h1>';
+		print_r($dataToSmarty);
+		echo '</pre>';
+		echo '<pre>';
+		echo '<h1>$temp</h1>';
+		print_r($temp);
+		echo '</pre>';
+		echo '<pre>';
+		echo '<h1>$temp2</h1>';
+		print_r($temp2);
+		echo '</pre>';
+		$smarty->assign('dataToSmarty',$dataToSmarty);
+		$smarty->assign('img_path_array', $temp);
+		$smarty->assign('singleLinkSmarty', $temp2);
+		$smarty->assign('newIcon', NEW_STATUS);
+		$htmlOutput = $smarty->fetch('category.tpl');
 // 		print_r($categories);
 // 		echo '<h1>HELLO</h1>';
 // 		echo '<pre>';
 // 		print_r(array_keys($categories['toy']));
 // 		echo '</pre>';
-// 		foreach($categories as $key => $value){
-// 			echo '<pre>';
-// 			print_r(key($key));
-// 			echo '</pre>';
-// 		}
-		
-// 		for($var=0;$var<count($category_list); $var++){
-// 			$category = $category_list[$var];
-// // 			echo '<h1>HELLO</h1>';
-// 			echo '<pre>';
-// 			print_r(array_keys($categories[$category]));
-// 			echo '</pre>';
-// 		}
-// 		echo '<pre>';
-// 		print_r($categories);
-// 		echo '</pre>';
-		
+		return $htmlOutput;
 	}
 	
 // 	$singlePageHtml = processSingleHtml();
@@ -184,12 +187,9 @@
 // 		file_put_contents(FILE_PATH2."/".SINGLE_LINK.($var+1).".html", $singlePageHtml[$var]);
 // 	}
 	
-// 	$topPageHtmlOutput = processTopPageHtml();
-// 	for($var=0;$var<count($topPageHtmlOutput);$var++){
-// 		file_put_contents(FILE_PATH2."/".INDEX_LINK.($var+1).".html", $topPageHtmlOutput[$var]);
-// 	}
-	echo '<pre>';
-	print_r(processCategoryHtml());
-	echo '</pre>';
-	
+	$topPageHtmlOutput = processTopPageHtml();
+	for($var=0;$var<count($topPageHtmlOutput);$var++){
+		file_put_contents(FILE_PATH2."/".INDEX_LINK.($var+1).".html", $topPageHtmlOutput[$var]);
+	}
+// 	file_put_contents(FILE_PATH2."/".INDEX_LINK.".html", processCategoryHtml());
  ?>

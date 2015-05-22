@@ -134,14 +134,14 @@
 											{/if}
 											
 											{if $indexPage != $numIndex}
-												<a class="page-numbers" href="{$indexLink}{$numIndex}.html">{$numIndex}</a>
+												<a class="page-numbers" href="{$indexLink}{$indexPage}.html">{$indexPage}</a>
 											{/if}
 											{if $indexPage != $numIndex}
 												<a class="next page-numbers" href="{$indexLink}{$indexPage+1}.html">次へ »</a>
 											{/if}		
 										{/if}
 									</div>
-										{for $var=0 to $maxItem}
+										{for $var=0 to count($csvData)-1}
 											<div class="post_list">
 												<div class="post_img">
 													<a href="{$singleLink[$var]}"><img alt="main_image" src="{$img_path_array[$var][0]}"></a>

@@ -53,7 +53,7 @@
 		}
 
 		public function setTotal_index(){
-			$this->total_index = (int)($this->total_items / MAX_ITEM);
+			$this->total_index = ($this->total_items / MAX_ITEM);
 		}
 
 		public function getTotal_index(){

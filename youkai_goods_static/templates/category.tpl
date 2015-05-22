@@ -1,4 +1,4 @@
-{include file="header3.tpl"}
+{include file="header.tpl"}
 {literal}
 <style>
 
@@ -68,21 +68,21 @@
 			height:23px;
 			}
 			.cat_nopost{
-			background: url('wp-content/themes/Avada/images/img/home/bg_goods.png');
+			background: url('../../wp-content/themes/Avada/images/img/home/bg_goods.png');
 			border-top: 3px solid #325DE6;
 			border-bottom: 3px solid #325DE6;
 			text-align:center;
 			padding:107px;
 			}
 			.nopost_img{
-			background: url('wp-content/themes/Avada/images/img/category/item2.png');
+			background: url('../../wp-content/themes/Avada/images/img/category/item2.png');
 			width: 418px;
 			height: 310px;
 			display: inline-block;
 			}
 			/*Menu*/
 			.side1{
-			background:url('wp-content/themes/Avada/images/img/home/side1.png');
+			background:url('../../wp-content/themes/Avada/images/img/home/side1.png');
 			width:252px;
 			height:143px;
 			display: inline-block;
@@ -102,7 +102,7 @@
 			width: 352px;
 			}
 			html body.page div#wrapper div#main div.avada-row {
-			/* background-image: url("wp-content/themes/Avada/images/img/home/goods_bg.png"); */
+			/* background-image: url("../../wp-content/themes/Avada/images/img/home/goods_bg.png"); */
 			padding-bottom:50px;
 			width:980px;
 			max-width:980px;
@@ -123,7 +123,7 @@
 			float: right;
 			}
 			div.display_type_1   {
-			background-image: url('wp-content/themes/Avada/images/img/category/cat_bg.png');
+			background-image: url('../../wp-content/themes/Avada/images/img/category/cat_bg.png');
 			width:323px;
 			height: 174px;
 			position: relative;
@@ -153,7 +153,7 @@
 				<div class="avada-row" style="margin-top:0px;margin-bottom:0px;">
 					<div class="logo_v1">
 						<div class="face">
-							<img src="wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo" />
+							<img src="../../wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo" />
 						</div>
 						<div class="goods_logo1"><a href="../index.html" target="_blank"></a></div>
 					</div>
@@ -174,7 +174,7 @@
 			<div class="avada-row">
 				<div class="logo">
 					<div class="face">
-						<img src="wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo" />
+						<img src="../../wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo" />
 					</div>
 					<div class="goods_logo"><a href="index.php" target="_blank"></a></div>
 				</div>
@@ -213,8 +213,8 @@
 										 			<div class="post-content-container" >
 										 				<div class="post_list">
 										 					<div class="post_img">
-										 						<a href="{$img_path_array[itemIndex[$var]][0]}" ><img alt="main_image" src="sampol.jpg" />
-										 							<img alt="main_image" src="{$img_path_array[itemIndex[$var]][0]}" />
+										 						<a href="{$img_path_array[$var]}" >
+										 							<img alt="main_image" src="{$img_path_array[$var]}" />
 										 						</a>
 										 					</div>
 										 				</div>
@@ -239,7 +239,7 @@
 																ジバニャンのふわチョコモナカ														</a>
 															</div>
 															<div class="post-new">
-															<img alt="youkai_new_show_important" src="wp-content/themes/Avada/images/img/new_icon.png">													</div>
+															<img alt="youkai_new_show_important" src="../../wp-content/themes/Avada/images/img/new_icon.png">													</div>
 															<div class="catlower">
 																<div class="post-date-youkai">
 																	<p class="single-line-meta">
@@ -275,7 +275,7 @@
 																妖怪ウォッチ カード付折りたたみウォレット２														</a>
 															</div>
 															<div class="post-new">
-																<img alt="youkai_new_show_important" src="wp-content/themes/Avada/images/img/new_icon.png">
+																<img alt="youkai_new_show_important" src="../../wp-content/themes/Avada/images/img/new_icon.png">
 															</div>
 															<div class="catlower">
 																<div class="post-date-youkai">
