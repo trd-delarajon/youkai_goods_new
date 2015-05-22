@@ -1,6 +1,7 @@
 <?
 	define('LINK_PATH', dirname(__FILE__).'/HTML-Files/HTML_version');
 	define('MAX_ITEM', 20);
+	define('MAX_ITEM_CATEG', 14);
 	define('INDEX_LINK', 'topPage');
 	define('SINGLE_LINK', 'singlePage');
 	Class youkaiClass {

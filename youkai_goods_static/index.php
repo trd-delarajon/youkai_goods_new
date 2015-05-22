@@ -25,18 +25,7 @@
 	readCSV($csvFile);
 	$CSVDATA = $youkai->getCSVData();
 	$CSVSingleLink = $youkai->getSingle_page_link();
-	$toy-categ;
-	$dcd-categ;
-	$carddas-categ;
-	$gashapon-categ;
-	$pramo-categ;
-	$candy-categ;
-	$dailynec-categ;
-	$fashionaccessories-categ;
-	$prize-categ;
-	$stationery-categ;
-	$food-categ;
-	$category_list;
+	$categories;
 	$topPageHtmlOutput;
 	$singlePageHtml;
 	
@@ -102,9 +91,93 @@
 	function processCategoryHtml(){
 		$category_list = array("toy","dcd","carddas	","gashapon","pramo","candy","dailynec"
 								,"fashionaccessories","prize","stationery","food");
+		global $youkai;
+		global $CSVDATA;
+		global $CSVSingleLink;
+		global $smarty;
+		global $categories;
+		$img_path_array = $youkai->getImg_Path_Array();
+		$dataToSmarty;
+		$htmlOutput;
+		$indexItem;
+		for($index=0;$index<count($category_list); $index++){
+			$category = $category_list[$index];
+			$categories[$category] = array_filter($youkai->getCSVData(), function($csvdata) use ($category) { return $csvdata[0] === $category ;});
+		}
+		//takes care of removing NULL array elements
+// 		$categories = array_filter($categories);
+		
+		for($var=0;$var < count($category_list); $var++){
+			if(!empty($categories[$category_list[$var]])){
+				$itemIndex = array_keys($categories[$category_list[$var]]);
+				for ($counter=0;$counter < count($categories[$category_list[$var]]); $counter++){
+					
+					if($counter != MAX_ITEM_CATEG){
+						$dataToSmarty[] = $categories[$category_list[$var]][$itemIndex[$counter]];
+					}
+					$smarty->assign('itemIndex',$itemIndex);
+					$smarty->assign('dataToSmarty',$dataToSmarty);
+					$smarty->assign('img_path_array', $img_path_array);
+					$smarty->assign('singleLinkSmarty', $CSVSingleLink);
+					$smarty->assign('newIcon', NEW_STATUS);
+					$htmlOutput[$category_list[$var]] = $smarty->fetch('category.tpl');
+					$dataToSmarty = null;
+					$itemIndex = null;
+				}
+			
+// 				foreach($categories[$category_list[$var]] as $values=>$keys){
+// 					$dataToSmarty[] = $keys;
+// 				}
+// 				$smarty->assign('itemIndex',array_keys($categories[$category_list[$var]]));
+// 				$smarty->assign('dataToSmarty',$dataToSmarty);
+// 				$smarty->assign('img_path_array', $img_path_array);
+// 				$smarty->assign('singleLinkSmarty', $CSVSingleLink);
+// 				$smarty->assign('max_item', MAX_ITEM_CATEG);
+// 				$smarty->assign('newIcon', NEW_STATUS);
+// 				$htmlOutput[$category_list[$var]] = $smarty->fetch('single_page.tpl');
+// 				echo '<h1>HELLO</h1>';
+// 				echo '<pre>';
+// 				echo '<h1>HELLO1</h1>';
+// 				print_r(count($categories[$category_list[$var]]));
+// 				echo '<h1>HELLO2</h1>';
+// 				print_r($dataToSmarty);
+// 				print_r(array_keys($categories[$category_list[$var]]));
+// 				echo '</pre>';
+				
+// 				foreach ($dataToSmarty as $value){
+// 					echo '<pre>';
+// 					print_r($dataToSmarty);
+// 					echo '</pre>';
+// 				}
+				
+			}
+			
+			return $htmlOutput;
+		}
+		
+// 		print_r($categories);
+// 		echo '<h1>HELLO</h1>';
+// 		echo '<pre>';
+// 		print_r(array_keys($categories['toy']));
+// 		echo '</pre>';
+// 		foreach($categories as $key => $value){
+// 			echo '<pre>';
+// 			print_r(key($key));
+// 			echo '</pre>';
+// 		}
+		
+// 		for($var=0;$var<count($category_list); $var++){
+// 			$category = $category_list[$var];
+// // 			echo '<h1>HELLO</h1>';
+// 			echo '<pre>';
+// 			print_r(array_keys($categories[$category]));
+// 			echo '</pre>';
+// 		}
+// 		echo '<pre>';
+// 		print_r($categories);
+// 		echo '</pre>';
 		
 	}
-	
 	
 // 	$singlePageHtml = processSingleHtml();
 // 	for($var=0;$var<count($singlePageHtml);$var++){
@@ -115,6 +188,8 @@
 // 	for($var=0;$var<count($topPageHtmlOutput);$var++){
 // 		file_put_contents(FILE_PATH2."/".INDEX_LINK.($var+1).".html", $topPageHtmlOutput[$var]);
 // 	}
-
+	echo '<pre>';
+	print_r(processCategoryHtml());
+	echo '</pre>';
 	
  ?>

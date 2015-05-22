@@ -70,17 +70,36 @@ include __DIR__ .'/youkaiClass.php';
 	print_r($foo);
 	echo '</pre>';
 	
-	function categ($var){
-		return ($var[0] === "prize");
+	function categ($var, $var2){
+		return ($var[0] === $var2);
 	}
 	
-	function myfunction($v)
+	function myfunction()
 	{
+		global $youkai;
+		$arr = array();
+		$category_list = array("toy","dcd","carddas	","gashapon","pramo","candy","dailynec"
+				,"fashionaccessories","prize","stationery","food");
+		for($i=0;$i<count($category_list); $i++){
+			$d = $category_list[$i];
+			$arr[$d] = array_filter($youkai->getCSVData(), function($x) use ($d) { return $x[0] === $d ;});
+		}
 		
+// 		foreach($arr as $value){
+// 			if($value )
+// 		}
+		$arr = array_filter($arr);
+		echo '<h1>Hello Category separated</h1>';
+		echo '<pre>';
+		print_r($arr);
+// 		print_r(array_filter($youkai->getCSVData(), function($i) use ($category_list) { return $i[0] == $category_list ;}));
+		echo '</pre>';
 	}
-
-	echo '<h1>Hello Category</h1>';
-	echo '<pre>';
-	print_r(array_filter( $youkai->getCSVData(),"categ"));
-	echo '</pre>';
+	
+// 	echo '<h1>Hello Category</h1>';
+// 	echo '<pre>';
+// 	print_r(array_filter( $youkai->getCSVData(),"categ"));
+// 	echo '</pre>';
+	
+	myfunction();
 ?>
