@@ -4,6 +4,7 @@
 	define('MAX_ITEM_CATEG', 14);
 	define('INDEX_LINK', 'topPage');
 	define('SINGLE_LINK', 'singlePage');
+	define('CATEGORY_LINK', 'categoryPage');
 	Class youkaiClass {
 		private $CSV_data;
 		private $single_page_link;
@@ -53,7 +54,10 @@
 		}
 
 		public function setTotal_index(){
-			$this->total_index = ($this->total_items / MAX_ITEM);
+			if(($this->total_items % MAX_ITEM) != 0)
+				$this->total_index = (int)($this->total_items / MAX_ITEM) + 1;
+			else
+				$this->total_index = ($this->total_items / MAX_ITEM);
 		}
 
 		public function getTotal_index(){

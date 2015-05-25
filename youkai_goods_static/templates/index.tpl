@@ -84,8 +84,7 @@
 							<div id="post-goods">
 								<div class="post-content-container">
 									<div class="goods_nav">
-
-										{if $numIndex < 3}
+										{if $numIndex <= 4}
 											{for $var=1 to $numIndex}
 												{if $indexPage == $var}
 													<span class="page-numbers current">{$indexPage}</span>
@@ -129,18 +128,19 @@
 												{/for}
 											{/if}
 
-											{if $indexPage <= ($numIndex*0.72)}
+											{if $indexPage <= ($numIndex*0.70)}
 												<span class="page-numbers dots">…</span>
 											{/if}
-											
+												
 											{if $indexPage != $numIndex}
-												<a class="page-numbers" href="{$indexLink}{$indexPage}.html">{$indexPage}</a>
+												<a class="page-numbers" href="{$indexLink}{$numIndex}.html">{$numIndex}</a>
 											{/if}
+
 											{if $indexPage != $numIndex}
 												<a class="next page-numbers" href="{$indexLink}{$indexPage+1}.html">次へ »</a>
 											{/if}		
 										{/if}
-									</div>
+									</div>	
 										{for $var=0 to count($csvData)-1}
 											<div class="post_list">
 												<div class="post_img">

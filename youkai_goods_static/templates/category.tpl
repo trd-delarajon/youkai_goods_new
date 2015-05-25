@@ -206,7 +206,7 @@
 							<div class="" id="public_site_container" >
 								<div id="public_site_block">
 
-									{for $var=0 to count($dataToSmarty)}
+									{for $var=0 to count($dataToSmarty)-1}
 										 <div class="display_type_1">
 										 	<div class="home_post_border_1">
 										 		<div id="post-goods">
@@ -299,12 +299,68 @@
 									</div> -->
 									
 									<div class="goods_nav">
-										<span class='page-numbers current'>1</span>
+										{if $numIndex <= 4}
+											{for $var=1 to $numIndex}
+												{if $indexPage == $var}
+													<span class="page-numbers current">{$indexPage}</span>
+												{else}
+													<a class="page-numbers" href="{$categoryLink}{$var}.html">{$var}</a>
+												{/if}
+											{/for}
+										{else}
+											{if $indexPage > 1}
+												<a class="prev page-numbers" href="{$categoryLink}{$indexPage-1}.html">« 前へ</a>
+											{/if}
+
+											{if $indexPage >= 5}
+												<a class="page-numbers" href="{$indexLink}1.html">1</a>
+												<span class="page-numbers dots">…</span>
+											{/if}
+
+											{if $indexPage >= 5}
+												{for $var=$indexPage-2 to $numIndex max=5}
+													{if $indexPage == $var}
+														<span class="page-numbers current">{$indexPage}</span>
+													{elseif $var != $numIndex}
+														<a class="page-numbers" href="{$categoryLink}{$var}.html">{$var}</a>
+													{/if}
+												{/for}
+											{elseif $indexPage <= ($numIndex*0.70)}
+												{for $var=1 to $numIndex max=3+($indexPage-1)}
+													{if $indexPage == $var}
+														<span class="page-numbers current">{$indexPage}</span>
+													{elseif $var != $numIndex}
+														<a class="page-numbers" href="{$categoryLink}{$var}.html">{$var}</a>
+													{/if}
+												{/for}
+											{else}
+												{for $var=$indexPage to $numIndex}
+													{if $indexPage == $var}
+														<span class="page-numbers current">{$indexPage}</span>
+													{elseif $var != $numIndex}
+														<a class="page-numbers" href="{$categoryLink}{$var}.html">{$var}</a>
+													{/if}
+												{/for}
+											{/if}
+
+											{if $indexPage <= ($numIndex*0.70)}
+												<span class="page-numbers dots">…</span>
+											{/if}
+												
+											{if $indexPage != $numIndex}
+												<a class="page-numbers" href="{$categoryLink}{$numIndex}.html">{$numIndex}</a>
+											{/if}
+
+											{if $indexPage != $numIndex}
+												<a class="next page-numbers" href="{$categoryLink}{$indexPage+1}.html">次へ »</a>
+											{/if}
+										{/if}
+										<!-- <span class='page-numbers current'>1</span>
 										<a class='page-numbers' href='#'>2</a>
 										<a class='page-numbers' href='#'>3</a>
 										<span class="page-numbers dots">&hellip;</span>
 										<a class='page-numbers' href='#'>15</a>
-										<a class="next page-numbers" href="#">次へ &raquo;</a>
+										<a class="next page-numbers" href="#">次へ &raquo;</a> -->
 									</div>
 								</div>
 								<br />
