@@ -1,9 +1,13 @@
 <?php 
-
-	require_once("config.php");
-	include __DIR__ .'/youkaiClass.php';
-	define('NEW_STATUS','../../wp-content/themes/Avada/images/img/new_icon.png');
-	define('FILE_PATH2', dirname(__FILE__).'/HTML-Files/HTML_version');
+define('LINK_PATH', dirname(__FILE__).'/HTML-Files/HTML_version');
+define('INDEX_LINK', 'topPage');
+define('SINGLE_LINK', 'singlePage');
+define('CATEGORY_LINK', 'categoryPage');
+define('NEW_STATUS','../../wp-content/themes/Avada/images/img/new_icon.png');
+define('FILE_PATH2', dirname(__FILE__).'/HTML-Files/HTML_version');
+require_once("config.php");
+include __DIR__ .'/youkaiClass.php';
+	
 	$youkai = new youkaiClass();
 	$data;
 	$csvFile;
@@ -198,9 +202,9 @@
 	$category_list2 = array("toy","dcd","carddas","gashapon","pramo","candy","dailynec"
 			,"fashionaccessories","prize","stationery","food");
 	
-	for($var = 0; $var < count($category_list2); $var++){
-		$categoryPageHtml[$category_list2[$var]] = processCategoryHtml($category_list2[$var]);
-	}
+// 	for($var = 0; $var < count($category_list2); $var++){
+// 		$categoryPageHtml[$category_list2[$var]] = processCategoryHtml($category_list2[$var]);
+// 	}
 	
 // 	for($var = 0; $var < count($category_list2); $var++){
 // 		if($categoryPageHtml[$category_list2[$var]] != null){
@@ -214,10 +218,7 @@
 // 		}
 // 	}
 	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	echo dirname(__DIR__).'<br>';
+	echo __DIR__.'<br>';
 	echo $actual_link.'<br>';
-// 	echo '<pre>';
-// 	echo '<h1>$categoryPageHtml</h1>';
-// 	print_r($categoryPageHtml);
-// 	echo '</pre>';
+
  ?>

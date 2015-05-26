@@ -1,11 +1,6 @@
 <?
-	define('LINK_PATH', dirname(__FILE__).'/HTML-Files/HTML_version');
-	define('MAX_ITEM', 20);
-	define('MAX_ITEM_CATEG', 14);
-	define('INDEX_LINK', 'topPage');
-	define('SINGLE_LINK', 'singlePage');
-	define('CATEGORY_LINK', 'categoryPage');
 	Class youkaiClass {
+		private $baseUrl;
 		private $CSV_data;
 		private $single_page_link;
 		private $total_items;
@@ -15,10 +10,17 @@
 		private $external_links_array;
 		private $external_links_label_array;
 		
+		private $max_item_index = 20;
+		private $max_item_category = 14;
+		private $single_file_name = 'singlePage';
+		private $index_file_name = 'indexPage';
+		private $category_file_name = 'categoryPage';
+		
 		public function setCSVData($indexdata){
 			$this->CSV_data = $indexdata;
 			$this->setTotal_items();
-			$this->setTotal_index();
+			$this->setTotalItem_index();
+			$this->baseUrl = $this->setBaseUrl();
 			$this->process();
 		}
 
@@ -36,9 +38,24 @@
 				$this->img_path_array[$index] = $img_arr;
 				$this->external_links_array[$index] = $ext_link_arr;
 				$this->external_links_label_array[$index] = $ext_link_lbl_arr;
-				$this->single_page_link[$index] = SINGLE_LINK.($index+1).'.html';
 				$this->CSV_data[$index][4] = str_replace("\\n", "</br>", $this->CSV_data[$index][4]);
 			}
+		}
+		
+		private function setBaseUrl(){
+			$currentPath = $_SERVER['PHP_SELF'];
+			
+			// output: Array ( [dirname] => /myproject [basename] => index.php [extension] => php [filename] => index )
+			$pathInfo = pathinfo($currentPath);
+			
+			// output: localhost
+			$hostName = $_SERVER['HTTP_HOST'];
+			
+			// output: http://
+			$protocol = strtolower(substr($_SERVER["SERVER_PROTOCOL"],0,5))=='https://'?'https://':'http://';
+			
+			// return: http://localhost/myproject/
+			return $protocol.$hostName.$pathInfo['dirname']."/";
 		}
 		
 		public function getSingle_page_link(){
@@ -53,19 +70,19 @@
 			return $this->total_items;
 		}
 
-		public function setTotal_index(){
-			if(($this->total_items % MAX_ITEM) != 0)
-				$this->total_index = (int)($this->total_items / MAX_ITEM) + 1;
+		public function setTotalItem_index(){
+			if(($this->total_items % $this->max_item_index) != 0)
+				$this->total_index = (int)($this->total_items / $this->max_item_index) + 1;
 			else
-				$this->total_index = ($this->total_items / MAX_ITEM);
+				$this->total_index = ($this->total_items / $this->max_item_index);
 		}
 
-		public function getTotal_index(){
+		public function getTotalItem_index(){
 			return $this->total_index;
 		}
 
 		public function getMaxItem(){
-			return MAX_ITEM;
+			return $this->max_item_index;
 		}
 		
 		public function getProd_Desc_Array(){
@@ -82,6 +99,14 @@
 		
 		public function getExternal_Links_Label_Array(){
 			return $this->external_links_label_array;
+		}
+		
+		public function getBaseUrl(){
+			return $this->baseUrl;
+		}
+		
+		public function getSingleFileName(){
+			return $this->single_file_name;
 		}
 	}
 ?>
