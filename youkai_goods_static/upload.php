@@ -1,4 +1,6 @@
 <?php
+ 	define ('csvfolder', getcwd().'/'."csv_file/");
+	
 	$msg = '';
 	$upload_dir = "csv_file/"; //folder name
 	
@@ -54,9 +56,8 @@ if (isset($_FILES["csv_file"]))
 			<span style="color:red"><?=$msg?></span>
 		</form><br>
 		<?php
-		/*$newest_file = scandir(csvfolder, 1);
-		//$newest_file = $files;
-		echo 'csv_file: ' . $newest_file[0];*/
+		$newest_file = scandir(csvfolder, 1);
+		echo 'csv_file: ' . $newest_file[0];
 		?>
 		
 		<table border="1" style="table:table-collapsed;  margin:auto ; width:900px;">
