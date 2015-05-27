@@ -68,15 +68,18 @@ $(document).ready(function() {
 											$('#loading').hide();
 											$('#message').hide();
 											$('#fileupload').val('');
+											$('#generatem').addClass('active');
+											//$('#generatem').removeAttr('disabled');
+			              			 		$('#generatemodal').modal('show')
+			              			 		$('.messageupload').html(data).show(2500).fadeOut(2500);	
+			              			 		$('#genmodal').attr('data-toggle', 'modal');
 
-			              			},1000);
+			              			},1500);
 								 $('.actve td').removeAttr('style');
 								 $('.actve td').removeClass('info');
-								 
 						}
-
-
-
+   								 $('td').removeAttr('style');
+								 $('td').removeClass('info');
 					}
 				});
 			}

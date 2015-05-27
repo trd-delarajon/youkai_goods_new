@@ -37,7 +37,7 @@ if (isset($_FILES["csv_file"]))//Upload File
 			//echo $msg ='Filename: '.$cname;
 			uploadCsvfile($user_id, $csv_id, $cname);
 
-			echo '<div class="alert alert-success text-center"><button type="button" class="close btn-xs" data-dismiss="alert" aria-hidden="true">&times;</button>csv file successfully uploaded... </div>';
+			echo '<div class="alert alert-success text-center"><button type="button" class="close btn-xs" data-dismiss="alert" aria-hidden="true">&times;</button> <strong>Success!</strong> csv file successfully uploaded... </div>';
 		}
 	/*}else { echo '<div class="alert alert-danger text-center"><button type="button" class="close btn-xs" data-dismiss="alert" aria-hidden="true">&times;</button>Please choose a file!</div>'; }*/
 }

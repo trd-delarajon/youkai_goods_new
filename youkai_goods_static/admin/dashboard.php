@@ -30,11 +30,11 @@
 	<div class="jumbotron">
         <?php  $csvfname = fetchAllCsvfile();
         if ($csvfname!= null): ?>
-        <span style="float:right;">Newest csv file:  <i style="color:#337ab7" id="newestfile">
+        <span>Newest csv file:  <i style="color:#337ab7" id="newestfile">
         	<?php if ($status1['status']== 1): ?> <?=$status1['filename']?> <?php endif ?> 
          </i></span> 
 		
-		<form method="post">
+		<!-- <form method="post">
 			<label>Choose csv file to restore :</label>
 			<select name="csv_id">
 			<?php foreach ($csvfname as $key => $value):  ?>	
@@ -42,7 +42,7 @@
 			 <?php endforeach ?>
 			</select>
 			<button type="submit" name="save" class="btn btn-default btn-xs">Save</button>
-		</form>
+		</form> -->
 
 		 <table class="table table-bordered table-condensed table-hover datatable">
 		 	<thead>
@@ -50,6 +50,7 @@
 					<th><span class="glyphicon glyphicon-file"> Filename</span></th>
 					<th><span class="glyphicon glyphicon-calendar"> Date</span></th>
 					<th><span class="glyphicon glyphicon-time"> Time</span></th>
+					<th><span class="glyphicon glyphicon-alert"> Action</span></th>
 				</tr>
 			</thead>
 			<tbody >
@@ -58,6 +59,9 @@
 				<td <?php if ($value['status']== 1): ?> class="info" style="color:#337ab7" <?php endif ?>> <?=$value['filename']?></td>
                 <td <?php if ($value['status']== 1): ?> class="info" <?php endif ?>><?=date('l\, F d\, Y', strtotime($value['date_added'])) ?></td>
                 <td <?php if ($value['status']== 1): ?> class="info" <?php endif ?>><?=time_ago_en($temp)?> <span style="float:right; font-size:9px;">Uploaded by: <?=$value['username']?></span> </td>
+				<td <?php if ($value['status']== 1): ?> class="info" <?php endif ?>>
+                    <a class="btn btn-default<?php if ($value['status']== 1): ?> disabled <?php endif ?>" href="#rest" data-toggle="modal" ><span class="glyphicon glyphicon-check"> </span> restore</a>   
+				</td>
 			</tr>
 			<?php  endforeach ?>	
 			</tbody>

@@ -14,7 +14,7 @@
 
  ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +52,7 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="#uploadcsv" data-toggle="modal"><span class="glyphicon glyphicon-upload"> </span> Upload csv file</a></li>
-              <li><a href="#generatemodal" data-toggle="modal"><span class="glyphicon glyphicon-ok"> </span> Generate</a></li>
+            <!--   <li id="generatem" ><a href="#generatemodal" id="genmodal"><span class="glyphicon glyphicon-ok"> </span> Generate</a></li> -->
             <!--   <li><a href="prog.php" ><span class="glyphicon glyphicon-ok"> </span> Generate</a></li> -->
              
             </ul>
@@ -94,10 +94,11 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
             <h4 class="modal-title">Generate</h4>
           </div>
           <div class="modal-body">
+            <div class="messageupload"></div>
           <form id="form" method="post"> 
               <div class="progress">
                 <div class="progress-bar progress-bar-striped active bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" >
@@ -107,7 +108,7 @@
           </div>
           <div class="modal-footer">
             <button type="submit" id="generate" class="btn btn-default btn-sm">Generate</button>
-            <button type="button" class="btn btn-default btn-sm"  data-dismiss="modal">Close</button>
+           <!--  <button type="button" class="btn btn-default btn-sm"  data-dismiss="modal">Close</button> -->
             </form>
           </div>
         </div>
