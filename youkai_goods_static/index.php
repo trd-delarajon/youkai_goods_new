@@ -25,7 +25,7 @@ include __DIR__ .'/youkaiClass.php';
 		$youkai->setCSVData($data);
 	}
 
-	$csvFile = 'csv_file/sampleData3.csv';
+	$csvFile = 'csv_file/sampleData2.csv';
 	readCSV($csvFile);
 	$CSVDATA = $youkai->getCSVData();
 	$CSVSingleLink = $youkai->getSingle_page_link();
@@ -120,15 +120,27 @@ include __DIR__ .'/youkaiClass.php';
 		global $smarty;
 		global $categories;
 		$img_path_array = $youkai->getImg_Path_Array();
-		$total_index = $youkai->getTotal_index();
+		$total_index = $youkai->getTotalItem_index();
 		$categories[$category] = array_filter($youkai->getCSVData(), function($csvdata) use ($category) { return $csvdata[0] === $category ;});
+// 		echo '<pre>';
+// 		echo 'hello222<br>';
+// 		print_r($img_path_array);
+// 		echo '</pre>';
+		
+// 		echo '<pre>';
+// 		echo 'array_keys<br>';
+// 		print_r($total_index);
+// 		echo '</pre>';
 		$htmlOutput = array();
 		$counter = 0;
 		$pageIndex = 1;
 		$indexItem;
 		$singleLinkSmarty;
 		if($categories[$category] == null){
-			
+// 			echo '<pre>';
+// 			echo 'array_keyssssss<br>';
+// 			print_r(array_keys($categories));
+// 			echo '</pre>';
 		}
 		else{
 			
@@ -136,16 +148,26 @@ include __DIR__ .'/youkaiClass.php';
 			$indexImgPathArr;
 			$dataToSmarty;
 			$itemIndex = array_keys($categories[$category]);
-			if((count($categories[$category]) % MAX_ITEM_CATEG) != 0)
-				$indexPage = (int)((count($categories[$category]) / MAX_ITEM_CATEG)) + 1;
-			else
-				$indexPage = (count($categories[$category]) / MAX_ITEM_CATEG);
+			
+			echo '<pre>';
+			echo 'itemIndex<br>';
+			print_r($itemIndex);
+			echo '</pre>';
+			
+// 			if((count($categories[$category]) % MAX_ITEM_CATEG) != 0)
+// 				$indexPage = (int)((count($categories[$category]) / MAX_ITEM_CATEG)) + 1;
+// 			else
+// 				$indexPage = (count($categories[$category]) / MAX_ITEM_CATEG);
 			
 			for($var=0; $var < count($categories[$category]); $var++){
 				$dataToSmarty[] = $categories[$category][$itemIndex[$var]];
 				$indexImgPathArr[] = $img_path_array[$itemIndex[$var]][0];
 				$singleLinkSmarty[] = $CSVSingleLink[$itemIndex[$var]];
-				if($counter == MAX_ITEM_CATEG-1){
+				echo '<pre>';
+				echo 'imagesYEAH<br>';
+				print_r($indexImgPathArr);
+				echo '</pre>';
+				if($counter == 13){
 					$smarty->assign('dataToSmarty',$dataToSmarty);
 					$smarty->assign('numIndex', $indexPage);
 					$smarty->assign('indexPage', $pageIndex);
@@ -154,6 +176,7 @@ include __DIR__ .'/youkaiClass.php';
 					$smarty->assign('newIcon', NEW_STATUS);
 					$smarty->assign('categoryLink', $category);
 					$htmlOutput[] = $smarty->fetch('category.tpl');
+					
 					$dataToSmarty = null;
 					$indexImgPathArr = null;
 					$singleLinkSmarty = null;
@@ -169,9 +192,6 @@ include __DIR__ .'/youkaiClass.php';
 				$smarty->assign('img_path_array', $indexImgPathArr);
 				$smarty->assign('singleLinkSmarty', $singleLinkSmarty);
 				$smarty->assign('newIcon', NEW_STATUS);
-				echo 'index Page'.($pageIndex) .'<br>';
-				echo '$$tempIndex '.$indexPage.'<br>';
-				echo '$pageIndex '.$pageIndex.'<br><br>';
 				$htmlOutput[] = $smarty->fetch('category.tpl');
 				$dataToSmarty = null;
 				$indexImgPathArr = null;
@@ -202,9 +222,9 @@ include __DIR__ .'/youkaiClass.php';
 	$category_list2 = array("toy","dcd","carddas","gashapon","pramo","candy","dailynec"
 			,"fashionaccessories","prize","stationery","food");
 	
-// 	for($var = 0; $var < count($category_list2); $var++){
-// 		$categoryPageHtml[$category_list2[$var]] = processCategoryHtml($category_list2[$var]);
-// 	}
+	for($var = 0; $var < count($category_list2); $var++){
+		$categoryPageHtml[$category_list2[$var]] = processCategoryHtml($category_list2[$var]);
+	}
 	
 // 	for($var = 0; $var < count($category_list2); $var++){
 // 		if($categoryPageHtml[$category_list2[$var]] != null){

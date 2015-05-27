@@ -4,17 +4,10 @@
 		private $CSV_data;
 		private $single_page_link;
 		private $total_items;
-		private $total_index;
 		private $prod_desc_array;
 		private $img_path_array;
 		private $external_links_array;
 		private $external_links_label_array;
-		
-		private $max_item_index = 20;
-		private $max_item_category = 14;
-		private $single_file_name = 'singlePage';
-		private $index_file_name = 'indexPage';
-		private $category_file_name = 'categoryPage';
 		
 		public function setCSVData($indexdata){
 			$this->CSV_data = $indexdata;
@@ -70,21 +63,13 @@
 			return $this->total_items;
 		}
 
-		public function setTotalItem_index(){
-			if(($this->total_items % $this->max_item_index) != 0)
-				$this->total_index = (int)($this->total_items / $this->max_item_index) + 1;
+		public function TotalItem_index($total_items, $max_item){
+			if(($total_items % $max_item) != 0)
+				return (int)(total_items / $max_item) + 1;
 			else
-				$this->total_index = ($this->total_items / $this->max_item_index);
+				return total_items / $max_item;
 		}
 
-		public function getTotalItem_index(){
-			return $this->total_index;
-		}
-
-		public function getMaxItem(){
-			return $this->max_item_index;
-		}
-		
 		public function getProd_Desc_Array(){
 			return $this->prod_desc_array;
 		}
@@ -104,9 +89,17 @@
 		public function getBaseUrl(){
 			return $this->baseUrl;
 		}
+		/**05-27-2015**/
+// 		public function getSingleFileName(){
+// 			return $this->single_file_name;
+// 		}
 		
-		public function getSingleFileName(){
-			return $this->single_file_name;
-		}
+// 		public function getSingleFileName(){
+// 			return $this->index_file_name;
+// 		}
+		
+// 		public function getSingleFileName(){
+// 			return $this->category_file_name;
+// 		}
 	}
 ?>
