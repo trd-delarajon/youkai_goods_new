@@ -16,8 +16,8 @@
 
 	$msg = '';
 	$upload_dir = CSVFILE; //folder directory name 
-	
-
+	$status1 	= fetchCsvfileStatus1();
+	$csv_id 	= $status1['csv_id'];
 
 if (isset($_FILES["csv_file"]))//Upload File
 {
@@ -35,7 +35,7 @@ if (isset($_FILES["csv_file"]))//Upload File
 			$cname = date("Ymd H:i:s", time()).'.csv';
 			move_uploaded_file($src, $upload_dir . $cname);
 			//echo $msg ='Filename: '.$cname;
-			uploadCsvfile($user_id, $cname);
+			uploadCsvfile($user_id, $csv_id, $cname);
 
 			echo '<div class="alert alert-success text-center"><button type="button" class="close btn-xs" data-dismiss="alert" aria-hidden="true">&times;</button>csv file successfully uploaded... </div>';
 		}

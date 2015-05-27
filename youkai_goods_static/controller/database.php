@@ -30,13 +30,13 @@
 		}
 
 
-		function uploadCsvfile($user_id, $filename)
+		function uploadCsvfile($user_id, $csv_id, $filename)
 		{
 			$db = database();
-			if (fetchCsvfile()) {
-				$sql = "UPDATE csvfile SET status = 0";
+			if (fetchCsvfileStatus1()) {
+				$sql = "UPDATE csvfile SET status = 0 WHERE csv_id=?";
 	            $pdo = $db->prepare($sql);
-	            $pdo->execute();
+	            $pdo->execute(array($csv_id));
 			}
 			$sql = "INSERT INTO csvfile (user_id, filename, date_added, status) VALUES (?,?,?,?)";
 			$pdo = $db->prepare($sql);
@@ -57,17 +57,32 @@
 			return $newcsv;
 		}
 
-		function fetchCsvfile()
+		function fetchCsvfile($csv_id)
 		{
 			$db = database();
-			$sql = "SELECT * FROM csvfile WHERE status = 1 ORDER BY date_added DESC";
+			$sql = "SELECT csv_id, status FROM csvfile WHERE status = 1 AND csv_id=?";
 			$pdo = $db->prepare($sql);
-			$pdo->execute();
+			$pdo->execute(array($csv_id));
 			$newcsv = $pdo->fetch();
 			$db = null;
 
 			return $newcsv;
 		}
+
+		function fetchCsvfileStatus1()
+		{
+			$db = database();
+			$sql = "SELECT csv_id, filename, status FROM csvfile WHERE status = 1";
+			$pdo = $db->prepare($sql);
+			$pdo->execute();
+			$val = $pdo->fetch();
+			$db = null;
+
+			return $val;
+		}
+
+
+
 
 
 		function restoreCsv($csv_id)

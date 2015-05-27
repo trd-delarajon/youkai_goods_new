@@ -1,4 +1,5 @@
- <?php session_start(); include_once("header.php"); ?>
+ <?php //session_start(); 
+ include_once("header.php"); ?>
 
 <div class="progress">
   <div class="progress-bar progress-bar-striped active bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" >
@@ -13,6 +14,7 @@
 
 
  <?php include_once("footer.php"); ?>
+ <!-- 
 <script type="text/javascript">
     $('#generate').removeAttr('disabled');
 	$("#form").on('submit',(function(e) {
@@ -39,3 +41,4 @@
 			});
 	}));
 </script>
+  -->
