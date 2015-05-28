@@ -62,6 +62,7 @@ $(document).ready(function() {
 												html += "<td class='info' style='color:#337ab7'>" + filename + "</td>";
 												html += "<td class='info'>" + csvdate + "</td>";	
 												html += "<td class='info'>" + csvtime + "<span style='float:right; font-size:9px;'>Uploaded by:" + user + "</span> </td>";	
+												html += "<td class='info'>  <a class='btn btn-default disabled' href='#rest' data-toggle='modal' ><span class='glyphicon glyphicon-check'> </span> restore</a> </td>";	
 												html += "</tr>";
 			    				 			$('tbody').prepend(html);
 			    				 			$('#newestfile').text(filename);
@@ -77,14 +78,41 @@ $(document).ready(function() {
 			              			},1500);
 								 $('.actve td').removeAttr('style');
 								 $('.actve td').removeClass('info');
+								 $('.actve td, .restore').removeClass('disabled');
+
 						}
    								 $('td').removeAttr('style');
 								 $('td').removeClass('info');
+								 $('td').removeClass('disabled');
+
 					}
 				});
 			}
 	}));//end of upload
 
+	// restore
+ 	$('body').on('click', '.restore_btn', function() {
+      	csvid = $(this).attr('data-csvid');
+        $('#modalrestore .modal-body').html('<h6 style="text-align:center">'+ $(this).attr('csvfilename') +  ' ' + $(this).attr('data-date')+ ' <span style="float:right;font-size:9px;">'+ $(this).attr('data-time') + 'Uploaded by:' + $(this).attr('usern') + '</span> </h6>');
+        $('#modalrestore').modal('show');
+        return false;
+    });
+
+ 	$('.restmessage').hide();
+     $('body').on('click', '.btnrestore', function(e) {
+     	e.preventDefault();
+        $.post('../controller/restore.php',{csvid:csvid},function(data){
+        	console.log(data);
+			     		$('.restmessage').attr('class', 'alert alert-info').html('<p style="text-align:center"><b>Success</b></p>').show().fadeOut(1500);
+				        $('.actve td').removeAttr('style');
+						$('.actve td').removeClass('info');
+						$('.actve td, .restore').removeClass('disabled');
+						setTimeout(function(){
+					        $('#modalrestore').modal('toggle');  
+					        location.reload();
+						},2000)
+            });
+    	});
 
 
 	$('#generate').removeAttr('disabled');

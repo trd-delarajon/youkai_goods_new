@@ -1,5 +1,6 @@
 <?php 
    		define ('CSVFILE', dirname(__DIR__).'/'."csv_file/");
+   		define ('IMGDIR', dirname(__DIR__).'/'."uploadimages/");
    		
 		
 
