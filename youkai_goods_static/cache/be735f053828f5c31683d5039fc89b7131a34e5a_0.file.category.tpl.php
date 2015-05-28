@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.23, created on 2015-05-27 05:44:54
+<?php /* Smarty version 3.1.23, created on 2015-05-28 11:36:41
          compiled from "templates/category.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:175197488355653db6031960_17549410%%*/
+/*%%SmartyHeaderCode:6599919335566e1a9ae3240_01426313%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,14 +9,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'be735f053828f5c31683d5039fc89b7131a34e5a' => 
     array (
       0 => 'templates/category.tpl',
-      1 => 1432545229,
+      1 => 1432797412,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '175197488355653db6031960_17549410',
+  'nocache_hash' => '6599919335566e1a9ae3240_01426313',
   'variables' => 
   array (
-    'dataToSmarty' => 0,
+    'csvData' => 0,
     'var' => 0,
     'img_path_array' => 0,
     'numIndex' => 0,
@@ -26,14 +26,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.23',
-  'unifunc' => 'content_55653db6442a66_83754775',
+  'unifunc' => 'content_5566e1a9e519b4_83403901',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55653db6442a66_83754775')) {
-function content_55653db6442a66_83754775 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5566e1a9e519b4_83403901')) {
+function content_5566e1a9e519b4_83403901 ($_smarty_tpl) {
 ?>
 <?php
-$_smarty_tpl->properties['nocache_hash'] = '175197488355653db6031960_17549410';
+$_smarty_tpl->properties['nocache_hash'] = '6599919335566e1a9ae3240_01426313';
 echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -244,7 +244,7 @@ echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smart
 							<div class="" id="public_site_container" >
 								<div id="public_site_block">
 
-									<?php $_smarty_tpl->tpl_vars['var'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? count($_smarty_tpl->tpl_vars['dataToSmarty']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['dataToSmarty']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['var']->step));
+									<?php $_smarty_tpl->tpl_vars['var'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? count($_smarty_tpl->tpl_vars['csvData']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['csvData']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['var']->step));
 if ($_smarty_tpl->tpl_vars['var']->total > 0) {
 for ($_smarty_tpl->tpl_vars['var']->value = 0, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
 $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration == 1;$_smarty_tpl->tpl_vars['var']->last = $_smarty_tpl->tpl_vars['var']->iteration == $_smarty_tpl->tpl_vars['var']->total;?>
@@ -254,9 +254,9 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
 										 			<div class="post-content-container" >
 										 				<div class="post_list">
 										 					<div class="post_img">
-										 						<a href="<?php echo $_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['var']->value];?>
+										 						<a href="<?php echo $_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['var']->value][0];?>
 " >
-										 							<img alt="main_image" src="<?php echo $_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['var']->value];?>
+										 							<img alt="main_image" src="<?php echo $_smarty_tpl->tpl_vars['img_path_array']->value[$_smarty_tpl->tpl_vars['var']->value][0];?>
 " />
 										 						</a>
 										 					</div>

@@ -3,6 +3,7 @@ define('LINK_PATH', dirname(__FILE__).'/HTML-Files/HTML_version');
 define('INDEX_LINK', 'topPage');
 define('SINGLE_LINK', 'singlePage');
 define('CATEGORY_LINK', 'categoryPage');
+define('MAX_ITEM_CATEG', 14);
 define('NEW_STATUS','../../wp-content/themes/Avada/images/img/new_icon.png');
 define('FILE_PATH2', dirname(__FILE__).'/HTML-Files/HTML_version');
 require_once("config.php");
@@ -25,7 +26,7 @@ include __DIR__ .'/youkaiClass.php';
 		$youkai->setCSVData($data);
 	}
 
-	$csvFile = 'csv_file/sampleData2.csv';
+	$csvFile = 'csv_file/sampleData3.csv';
 	readCSV($csvFile);
 	$CSVDATA = $youkai->getCSVData();
 	$CSVSingleLink = $youkai->getSingle_page_link();
@@ -120,27 +121,15 @@ include __DIR__ .'/youkaiClass.php';
 		global $smarty;
 		global $categories;
 		$img_path_array = $youkai->getImg_Path_Array();
-		$total_index = $youkai->getTotalItem_index();
 		$categories[$category] = array_filter($youkai->getCSVData(), function($csvdata) use ($category) { return $csvdata[0] === $category ;});
-// 		echo '<pre>';
-// 		echo 'hello222<br>';
-// 		print_r($img_path_array);
-// 		echo '</pre>';
-		
-// 		echo '<pre>';
-// 		echo 'array_keys<br>';
-// 		print_r($total_index);
-// 		echo '</pre>';
+
 		$htmlOutput = array();
 		$counter = 0;
 		$pageIndex = 1;
 		$indexItem;
 		$singleLinkSmarty;
 		if($categories[$category] == null){
-// 			echo '<pre>';
-// 			echo 'array_keyssssss<br>';
-// 			print_r(array_keys($categories));
-// 			echo '</pre>';
+
 		}
 		else{
 			
@@ -149,26 +138,19 @@ include __DIR__ .'/youkaiClass.php';
 			$dataToSmarty;
 			$itemIndex = array_keys($categories[$category]);
 			
-			echo '<pre>';
-			echo 'itemIndex<br>';
-			print_r($itemIndex);
-			echo '</pre>';
-			
-// 			if((count($categories[$category]) % MAX_ITEM_CATEG) != 0)
-// 				$indexPage = (int)((count($categories[$category]) / MAX_ITEM_CATEG)) + 1;
-// 			else
-// 				$indexPage = (count($categories[$category]) / MAX_ITEM_CATEG);
+
+			if((count($categories[$category]) % MAX_ITEM_CATEG) != 0)
+				$indexPage = (int)((count($categories[$category]) / MAX_ITEM_CATEG)) + 1;
+			else
+				$indexPage = (count($categories[$category]) / MAX_ITEM_CATEG);
 			
 			for($var=0; $var < count($categories[$category]); $var++){
 				$dataToSmarty[] = $categories[$category][$itemIndex[$var]];
 				$indexImgPathArr[] = $img_path_array[$itemIndex[$var]][0];
 				$singleLinkSmarty[] = $CSVSingleLink[$itemIndex[$var]];
-				echo '<pre>';
-				echo 'imagesYEAH<br>';
-				print_r($indexImgPathArr);
-				echo '</pre>';
+
 				if($counter == 13){
-					$smarty->assign('dataToSmarty',$dataToSmarty);
+					$smarty->assign('csvData',$dataToSmarty);
 					$smarty->assign('numIndex', $indexPage);
 					$smarty->assign('indexPage', $pageIndex);
 					$smarty->assign('img_path_array', $indexImgPathArr);
@@ -186,7 +168,7 @@ include __DIR__ .'/youkaiClass.php';
 				$counter++;
 			}
 			if($counter > 0){
-				$smarty->assign('dataToSmarty',$dataToSmarty);
+				$smarty->assign('csvData',$dataToSmarty);
 				$smarty->assign('numIndex', $indexPage);
 				$smarty->assign('indexPage', $pageIndex);
 				$smarty->assign('img_path_array', $indexImgPathArr);
@@ -226,17 +208,22 @@ include __DIR__ .'/youkaiClass.php';
 		$categoryPageHtml[$category_list2[$var]] = processCategoryHtml($category_list2[$var]);
 	}
 	
-// 	for($var = 0; $var < count($category_list2); $var++){
-// 		if($categoryPageHtml[$category_list2[$var]] != null){
-// 			for($var2 = 0; $var2 < count($categoryPageHtml[$category_list2[$var]]); $var2++){
-// 				file_put_contents(FILE_PATH2."/".$category_list2[$var].($var2+1).".html", $categoryPageHtml[$category_list2[$var]][$var2]);
-// 			}
+	for($var = 0; $var < count($category_list2); $var++){
+		if($categoryPageHtml[$category_list2[$var]] != null){
+			for($var2 = 0; $var2 < count($categoryPageHtml[$category_list2[$var]]); $var2++){
+				file_put_contents(FILE_PATH2."/".$category_list2[$var].($var2+1).".html", $categoryPageHtml[$category_list2[$var]][$var2]);
+			}
 // 			echo '<pre>';
 // 			echo '<h1>count($categoryPageHtml[$category_list2[$var]])</h1>';
 // 			print_r(count($categoryPageHtml[$category_list2[$var]]));
 // 			echo '</pre>';
-// 		}
-// 	}
+		}
+	}
+	
+	echo '<pre>';
+	echo '<h1>count($categoryPageHtml[$category_list2[$var]])</h1>';
+	print_r($categoryPageHtml);
+	echo '</pre>';
 	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	echo __DIR__.'<br>';
 	echo $actual_link.'<br>';

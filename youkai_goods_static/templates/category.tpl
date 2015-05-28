@@ -206,15 +206,15 @@
 							<div class="" id="public_site_container" >
 								<div id="public_site_block">
 
-									{for $var=0 to count($dataToSmarty)-1}
+									{for $var=0 to count($csvData)-1}
 										 <div class="display_type_1">
 										 	<div class="home_post_border_1">
 										 		<div id="post-goods">
 										 			<div class="post-content-container" >
 										 				<div class="post_list">
 										 					<div class="post_img">
-										 						<a href="{$img_path_array[$var]}" >
-										 							<img alt="main_image" src="{$img_path_array[$var]}" />
+										 						<a href="{$img_path_array[$var][0]}" >
+										 							<img alt="main_image" src="{$img_path_array[$var][0]}" />
 										 						</a>
 										 					</div>
 										 				</div>

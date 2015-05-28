@@ -1,5 +1,4 @@
 <?PHP
-define('SINGLE_LINK', 'singlePage');
 class publish{
 	private $smarty;
 	//general data
@@ -26,8 +25,8 @@ class publish{
 	const SINGLE_FILE_NAME = 'singlePage';
 	const INDEX_FILE_NAME = 'indexPage';
 	const CATEGORY_FILE_NAME = 'categoryPage';
-	const MAX_CATEGORY = 14;
-	const MAX_ITEM = 20;
+	const MAX_CATEGORY = 13;
+	const MAX_ITEM = 19;
 	
 	public function __construct($csvFile){
 		include __DIR__.'/youkaiClass.php';
@@ -61,9 +60,9 @@ class publish{
 		$counter = 0;
 		$pageIndex=1;
 		$singleLinkSmarty;
-		$numIndex = $this->youkaiGoods->TotalItem_index($this->total_item, SELF::MAX_ITEM);
+		$numIndex = $this->TotalItem_index($this->total_item, SELF::MAX_ITEM);
 		$indexLink = $this->link_path.self::SINGLE_FILE_NAME;
-		$max_item = $this->youkaiGoods->getMaxItem();
+		$max_item = SELF::MAX_ITEM;
 		for($index = 0; $index < $this->total_item; $index++){
 			$dataToSmarty[] =  $this->CSVDATA[$index];
 			$singleLinkSmarty[] = $this->CSVSingleLink[$index];
@@ -118,32 +117,101 @@ class publish{
 		return $htmlOutput;
 	}
 	
+	private function generateCategoryHTML($curCategory){
+		$category;
+		$htmlOutput = array();
+		$counter = 0;
+		$pageIndex = 1;
+	
+		$category[$curCategory] = $this->filterCategory($curCategory);
+		if($category[$curCategory] == null){
+			$htmlOutput[$curCategory] = $this->generateSmarty($this->smarty, null, 'category');
+		}
+		else{
+			$itemIndex = array_keys($category[$curCategory]);
+			$dataToSmarty;
+			$indexImgPathArr;
+			$singleLinkSmarty;
+			$indexPage = $this->TotalItem_index(count($category[$curCategory]), SELF::MAX_ITEM);
+			echo $indexPage;
+			for($index = 0; $index < count($category[$curCategory]); $index++){
+				$dataToSmarty[] = $category[$curCategory][$itemIndex[$index]];
+				$indexImgPathArr[] = $this->img_path_array[$itemIndex[$index]];
+				$singleLinkSmarty[] = $this->CSVSingleLink[$itemIndex[$index]];
+				if($counter == SELF::MAX_CATEGORY){
+					$property = array(
+							"csvData" => $dataToSmarty,
+							"numIndex" => $indexPage,
+							"indexPage" => $pageIndex,
+							"img_path_array" => $indexImgPathArr,
+							"singleLinkSmarty" => $singleLinkSmarty,
+							"newIcon" => $this->newIcon,
+							"categoryLink" => $curCategory);
+					$htmlOutput[] = $this->generateSmarty($this->smarty, $property, 'category');
+					$dataToSmarty = null;
+					$indexImgPathArr = null;
+					$singleLinkSmarty = null;
+					$counter=-1;
+					$pageIndex++;
+				}
+				$counter++;
+			}
+			if($counter > 0){
+				$property = array(
+						"csvData" => $dataToSmarty,
+						"numIndex" => $indexPage,
+						"indexPage" => $pageIndex,
+						"img_path_array" => $indexImgPathArr,
+						"singleLinkSmarty" => $singleLinkSmarty,
+						"newIcon" => $this->newIcon,
+						"categoryLink" => $curCategory);
+				$htmlOutput[] = $this->generateSmarty($this->smarty, $property, 'category');
+				$dataToSmarty = null;
+				$indexImgPathArr = null;
+				$singleLinkSmarty = null;
+				$counter=-1;
+			}
+		}
+		return $htmlOutput;
+	}
+	
 	private function generateHTML(){
 		$singleHTML;
 		$indexHTML;
-		
+		$categoryHTML;
 		$this->processGeneralData();
 		
-// 		$singleHTML = $this->generateSinglePageHTML();
-// 		$limit = count($singleHTML);
-// 		for($count = 0;$count < $limit ;$count++){
-// 			file_put_contents(
-// 					$this->html_file_path
-// 				    ."/".self::SINGLE_FILE_NAME.($count+1)
-// 					.".html", $singleHTML[$count]);
-// 		}
+		$singleHTML = $this->generateSinglePageHTML();
+		$limit = count($singleHTML);
+		for($count = 0;$count < $limit ;$count++){
+			file_put_contents(
+					$this->html_file_path
+				    ."/".self::SINGLE_FILE_NAME.($count+1)
+					.".html", $singleHTML[$count]);
+		}
 		
-// 		$indexHTML = $this->generateIndexHTML();
-// 		$limit = count($indexHTML);
-// 		for($count = 0;$count < $limit ; $count++){
-// 			echo 'hello<br>';
-// 			file_put_contents(
-// 					$this->html_file_path
-// 					."/".self::INDEX_FILE_NAME.($count+1)
-// 					.".html", $indexHTML[$count]);
-// 		}
-		
-		$this->generateCategoryHTML();
+		$indexHTML = $this->generateIndexHTML();
+		$limit = count($indexHTML);
+		for($count = 0;$count < $limit ; $count++){
+			file_put_contents(
+					$this->html_file_path
+					."/".self::INDEX_FILE_NAME.($count+1)
+					.".html", $indexHTML[$count]);
+		}
+		$limit = count(SELF::$CATEGORIES);
+		for($count = 0; $count < $limit; $count++){
+			$curCategory = SELF::$CATEGORIES[$count];
+			$categoryHTML[$curCategory] = $this->generateCategoryHTML($curCategory);
+
+			$htmlNumber = 1;
+			foreach($categoryHTML[$curCategory] as $key => $value){
+				file_put_contents(
+					$this->html_file_path
+					."/".$curCategory.($htmlNumber++)
+					.".html", $value);
+			}
+
+		}
 	}
 	
 	private function processGeneralData(){
@@ -153,7 +221,7 @@ class publish{
 		$this->img_path_array = $this->youkaiGoods->getImg_Path_Array();
 	}
 
-	private function generateSmarty($smarty, $properties, $type){
+	private function generateSmarty($smarty, $properties = null, $type){
 		$smarty->assign('csvData', $properties["csvData"]);
 		$smarty->assign('img_path_array', $properties["img_path_array"]);
 		$smarty->assign('newIcon', $properties["newIcon"]);
@@ -167,66 +235,21 @@ class publish{
 			$smarty->assign('indexPage',$properties["indexPage"]);
 			$smarty->assign('indexLink',$properties["indexLink"]);
 			$smarty->assign('numIndex',$properties["numIndex"]);
+		}elseif ($type === 'category'){
+			$smarty->assign('numIndex',$properties["numIndex"]);
+			$smarty->assign('indexPage',$properties["indexPage"]);
+			$smarty->assign('categoryLink',$properties["categoryLink"]);
+			$smarty->assign('singleLinkSmarty',$properties["singleLinkSmarty"]);
 		}
 		
 		return $smarty->fetch($type.'.tpl');
 	}
 	
-	private function generateCategoryHTML(){
-		$category;
-		$htmlOutput;
-		$counter = 0;
-		$pageIndex = 1;
-		
-		for($var = 0; $var < count(SELF::$CATEGORIES); $var++){
-			$category = $this->filterCategory(SELF::$CATEGORIES[$var]);
-			if($category == null){
-				echo 'hello<br>';
-			}
-			else{
-				$itemIndex = array_keys($category);
-				$dataToSmarty;
-				$indexImgPathArr;
-				$singleLinkSmarty;
-				$indexPage = $this->youkaiGoods->TotalItem_index(count($category), SELF::MAX_ITEM);
-				
-				for($counter = 0; $counter < count($category); $counter++){
-					$dataToSmarty[] = $category[$itemIndex[$counter]];
-					$indexImgPathArr[] = $this->img_path_array[$itemIndex[$counter]];
-					$singleLinkSmarty[] = $this->CSVSingleLink[$itemIndex[$counter]];
-					if($counter == SELF::MAX_CATEGORY){
-						$property = array(
-								"dataToSmarty" => $dataToSmarty,
-								"numIndex" => $indexPage,
-								"indexPage" => $pageIndex,
-								"img_path_array" => $indexImgPathArr,
-								"singleLinkSmarty" => $singleLinkSmarty,
-								"newIcon" => $this->newIcon,
-								"categoryLink" => SELF::$CATEGORIES[$var]);
-						$htmlOutput[SELF::$CATEGORIES[$var]] = $this->generateSmarty($this->smarty, $property, SELF::$CATEGORIES[$var]);
-						$dataToSmarty = null;
-						$indexImgPathArr = null;
-						$singleLinkSmarty = null;
-						$counter=-1;
-						$pageIndex++;
-					}
-					$counter++;
-				}
-				if($counter > 0){
-					$property = array(
-							"dataToSmarty" => $dataToSmarty,
-							"numIndex" => $indexPage,
-							"indexPage" => $pageIndex,
-							"img_path_array" => $indexImgPathArr,
-							"singleLinkSmarty" => $singleLinkSmarty,
-							"newIcon" => $this->newIcon,
-							"categoryLink" => SELF::$CATEGORIES[$var]);
-					$htmlOutput[SELF::$CATEGORIES[$var]] = $this->generateSmarty($this->smarty, $property, SELF::$CATEGORIES[$var]);
-				}
-			}
-				
-		}
-		
+	public function TotalItem_index($total_items, $max_item){
+		if(($total_items % $max_item) != 0)
+			return (int)($total_items / $max_item) + 1;
+	
+		return $total_items / $max_item;
 	}
 	
 	private function filterCategory($category){
@@ -237,5 +260,5 @@ class publish{
 	}
 }
 
- $shit = new publish('csv_file/sampleData2.csv');
+ $shit = new publish('csv_file/sampleData3.csv');
 ?>

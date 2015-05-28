@@ -12,7 +12,6 @@
 		public function setCSVData($indexdata){
 			$this->CSV_data = $indexdata;
 			$this->setTotal_items();
-			$this->setTotalItem_index();
 			$this->baseUrl = $this->setBaseUrl();
 			$this->process();
 		}
@@ -63,13 +62,6 @@
 			return $this->total_items;
 		}
 
-		public function TotalItem_index($total_items, $max_item){
-			if(($total_items % $max_item) != 0)
-				return (int)(total_items / $max_item) + 1;
-			else
-				return total_items / $max_item;
-		}
-
 		public function getProd_Desc_Array(){
 			return $this->prod_desc_array;
 		}
@@ -89,17 +81,6 @@
 		public function getBaseUrl(){
 			return $this->baseUrl;
 		}
-		/**05-27-2015**/
-// 		public function getSingleFileName(){
-// 			return $this->single_file_name;
-// 		}
-		
-// 		public function getSingleFileName(){
-// 			return $this->index_file_name;
-// 		}
-		
-// 		public function getSingleFileName(){
-// 			return $this->category_file_name;
-// 		}
+
 	}
 ?>
