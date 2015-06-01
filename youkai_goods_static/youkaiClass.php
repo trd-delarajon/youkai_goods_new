@@ -31,6 +31,7 @@
 				$this->external_links_array[$index] = $ext_link_arr;
 				$this->external_links_label_array[$index] = $ext_link_lbl_arr;
 				$this->CSV_data[$index][4] = str_replace("\\n", "</br>", $this->CSV_data[$index][4]);
+				
 			}
 		}
 		
@@ -50,12 +51,20 @@
 			return $protocol.$hostName.$pathInfo['dirname']."/";
 		}
 		
+		public function setSingle_page_link($fileName, $verFile = "HTML_version"){
+			for($count = 0; $count < $this->total_items; $count++){
+				$this->single_page_link[$count] = $this->baseUrl.'HTML-Files/'.$verFile.
+				'/'.$fileName.($count+1).'.html';
+			}
+		}
+		
 		public function getSingle_page_link(){
 			return $this->single_page_link;
 		}
 
 		public function setTotal_items(){
 			$this->total_items = count($this->CSV_data);
+			echo 'total_items:'.$this->total_items.'<br><br>';
 		}
 
 		public function getTotal_items(){

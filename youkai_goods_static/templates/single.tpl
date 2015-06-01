@@ -140,7 +140,22 @@
 											<img class="img" src="../../wp-content/themes/Avada/images/img/home/menu_hover12.png">
 										</div>
 										<div class="postdet_block">
-											<div class="postdet_list">
+
+											{for $var = 0 to count($category)-1}
+												{if $csvData[3] != $category[$itemIndex[$var]][3]}
+													<div class="postdet_list">
+														<div class="postdet_img">
+															<a href="{$singleLink[$itemIndex[$var]]}"><img alt="main_image" src="{$img_path_array[$itemIndex[$var]][0]}"></a>
+														</div>
+														<div class="postdet_det">
+															<div class="titledet_post">
+																<a href="{$singleLink[$itemIndex[$var]]}">{$category[$itemIndex[$var]][3]}</a>
+															</div>
+														</div>
+													</div>
+												{/if}
+											{/for}
+											<!-- <div class="postdet_list">
 												<div class="postdet_img">
 													<a href="http://youkai-world.com/goods/p2103/"><img alt="main_image" src="./wp-content/uploads/2015/03/food-妖怪プニプニぶどうグミ.jpg"></a>
 												</div>
@@ -238,7 +253,7 @@
 														妖怪ウォッチふりかけ									</a>
 													</div>
 												</div>
-											</div>
+											</div> -->
 										</div>
 									</div>
 								</div>

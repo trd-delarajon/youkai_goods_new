@@ -213,10 +213,28 @@
 										 			<div class="post-content-container" >
 										 				<div class="post_list">
 										 					<div class="post_img">
-										 						<a href="{$img_path_array[$var][0]}" >
+										 						<a href="{$singleLink[$var]}" >
 										 							<img alt="main_image" src="{$img_path_array[$var][0]}" />
 										 						</a>
 										 					</div>
+										 					<div class="catpost_right">
+											 					<div class="title_post">
+											 						<a href="{$singleLink[$var]}">{$csvData[$var][3]}</a>
+											 					</div>
+											 					<div class="post-new">
+											 						{if $csvData[$var][2] == '1'}
+											 							<img alt="youkai_new_show_important" src="{$newIcon}">	
+											 						{/if}
+											 					</div>
+											 					<div class="catlower">
+											 						<div class="post-date-youkai">
+											 							<p class="single-line-meta">{$csvData[$var][6]}</p>
+											 						</div>
+											 						<div class="post-price">
+											 							{if $csvData[$var][7] != "null"}{$csvData[$var][7]}{/if}
+											 						</div>
+											 					</div>
+											 				</div>
 										 				</div>
 										 			</div>
 										 			<div style="clear:both;"></div>
