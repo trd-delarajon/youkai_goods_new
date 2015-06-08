@@ -54,7 +54,7 @@
                 <td <?php if ($value['status']== 1): ?> class="info" <?php endif ?>><?=date('l\, F d\, Y', strtotime($value['date_added'])) ?></td>
                 <td <?php if ($value['status']== 1): ?> class="info" <?php endif ?>><?=time_ago_en($temp)?> <span style="float:right; font-size:9px;">Uploaded by: <?=$value['username']?></span> </td>
 				<td <?php if ($value['status']== 1): ?> class="info" <?php endif ?>>
-                    <a data-csvid="<?=$value['csv_id']?>" data-date="<?=date('l\, F d\, Y', strtotime($value['date_added'])) ?>" usern="<?=$value['username']?>" data-time="<?=time_ago_en($temp)?>" csvfilename="<?=$value['filename']?>" class="btn btn-default<?php if ($value['status']== 1): ?>  restore<?php endif ?> <?=btnstatus($value['status'],1);?> restore_btn" ><span  class="glyphicon glyphicon-check"> </span> restore</a>   
+                    <a csvstat="<?=$value['status']?>" data-csvid="<?=$value['csv_id']?>" data-date="<?=date('l\, F d\, Y', strtotime($value['date_added'])) ?>" usern="<?=$value['username']?>" data-time="<?=time_ago_en($temp)?>" csvfilename="<?=$value['filename']?>" class="btn btn-default<?php if ($value['status']== 1): ?>  restore<?php endif ?> <?=btnstatus($value['status'],1);?> restore_btn" ><span  class="glyphicon glyphicon-check"> </span> restore</a>   
 					
 				</td>
 			</tr>

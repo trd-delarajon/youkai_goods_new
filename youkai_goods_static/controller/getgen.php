@@ -11,12 +11,6 @@
 	}
 
 
-	/*define ('url', dirname(__DIR__).'/');
-
-	echo include_once(url.'generateHtml.php');*/
-	//echo url;
-
-
+	include('../generateFolder.php');
 
 ?>
-1

@@ -1,6 +1,7 @@
 <?php 
    		define ('CSVFILE', dirname(__DIR__).'/'."csv_file/");
    		define ('IMGDIR', dirname(__DIR__).'/'."uploadimages/");
+   		define ('GENFOLDER', dirname(__DIR__).'/'."HTML-Files/");
    		
 		
 
@@ -29,6 +30,20 @@
 			$pdo->execute(array($username, $password, $fullname));
 			$db = null;
 		}
+
+
+		function getAllAdmin()
+		{
+			$db = database();
+			$sql = "SELECT * FROM users";
+			$pdo = $db->prepare($sql);
+			$pdo->execute();
+			$user = $pdo->fetchAll();
+			$db = null;
+
+			return user;
+		}
+
 
 
 		function uploadCsvfile($user_id, $csv_id, $filename)

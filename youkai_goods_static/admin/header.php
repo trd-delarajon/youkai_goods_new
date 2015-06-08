@@ -30,13 +30,60 @@
     <link href="../stylesheets/css/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <style>
+.uploadify {
+  position: relative;
+  margin-bottom: 1em;
+}
 
+.uploadify-button-text{
+  color: #000;
+}
+.uploadify-button.disabled {
+  background-color: #D0D0D0;
+  color: #808080;
+}
+.uploadify-queue {
+  margin-bottom: 1em;
+}
+.uploadify-queue-item {
+  background-color: #F5F5F5;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font: 11px Verdana, Geneva, sans-serif;
+  margin-top: 5px;
+  max-width: 350px;
+  padding: 10px;
+}
+.uploadify-error {
+  background-color: #FDE5DD !important;
+}
+.uploadify-queue-item .cancel a {
+  background: url('../stylesheets/img/uploadify-cancel.png') 0 0 no-repeat;
+  float: right;
+  height: 16px;
+  text-indent: -9999px;
+  width: 16px;
+}
+.uploadify-queue-item.completed {
+  background-color: #E5E5E5;
+}
+.uploadify-progress {
+  background-color: #E5E5E5;
+  margin-top: 10px;
+  width: 100%;
+}
+.uploadify-progress-bar {
+  background-color: #0099FF;
+  height: 3px;
+  width: 1px;
+}
+    </style>
   </head>
 
   <body>
-
     <div class="container">
-
        <!-- Static navbar -->
         <nav class="navbar navbar-default ">
           <div class="container-fluid">
@@ -52,16 +99,16 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="#uploadcsv" data-toggle="modal"><span class="glyphicon glyphicon-file"> </span> Upload csvfile</a></li>
-                <li><a href="images.php"><span class="glyphicon glyphicon-upload"> Images</a></li>
+                <li><a href="images.php"><span class="glyphicon glyphicon-picture"> </span> Images</a></li>
                
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"> </span> Hi! <?=$username?>, <span class="glyphicon glyphicon-cog"> </span><span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"> </span> Add user</a></li>
+                    <li><a href="useraccount.php"><span class="glyphicon glyphicon-user"> </span> Add user</a></li>
                     <li class="divider"></li>
-                    <li class="dropdown-header"> AccountSetting</li>
+                    <li class="dropdown-header"> Account Setting</li>
                     <li><a href="#"><span class="glyphicon glyphicon-edit"> </span> Update</a></li>
                      <li><a href="logout.php"><span class="glyphicon glyphicon-off"> </span> Logout</a></li>
                   </ul>
@@ -71,24 +118,19 @@
           </div><!--/.container-fluid -->
         </nav>
 
-
-
-
-
-
 	<div class="modal fade" id="uploadcsv" tabindex="-1" role="dialog"  aria-hidden="true"  data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Upload csv file</h4>
+            <h4 class="modal-title">Upload csvfile</h4>
           </div>
           <div class="modal-body">
             <div id="message"></div>
 			       <span id='loading' style="margin-left: 45%;"><img src="../stylesheets/img/ajaxloader.gif" /></span>
 			       <form id="uploadForm" method="post" enctype="multipart/form-data" > 
 				        <div class="form-group">
-	                 <label>Choose csv file</label>
+	                 <label><span class="glyphicon glyphicon-file"> </span> Choose csvfile</label>
 					         <input type="file"   id="fileupload" name="csv_file" accept=".csv">
 	              </div>
           </div>
@@ -126,9 +168,3 @@
         </div>
       </div>
     </div>    
-
-
-
-
-
-

@@ -21,6 +21,8 @@ $csvtime	= time_ago_en($date);
 <script src="../stylesheets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../stylesheets/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="../stylesheets/js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="../stylesheets/js/jquery.uploadify.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function() {
     $('.datatable').dataTable( { bSort: false, "info": true, "paging": true, "searching": true, } );
@@ -93,6 +95,7 @@ $(document).ready(function() {
 	// restore
  	$('body').on('click', '.restore_btn', function() {
       	csvid = $(this).attr('data-csvid');
+     	status = $(this).attr('csvstat');
         $('#modalrestore .modal-body').html('<h6 style="text-align:center">'+ $(this).attr('csvfilename') +  ' ' + $(this).attr('data-date')+ ' <span style="float:right;font-size:9px;">'+ $(this).attr('data-time') + 'Uploaded by:' + $(this).attr('usern') + '</span> </h6>');
         $('#modalrestore').modal('show');
         return false;
@@ -103,14 +106,23 @@ $(document).ready(function() {
      	e.preventDefault();
         $.post('../controller/restore.php',{csvid:csvid},function(data){
         	console.log(data);
-			     		$('.restmessage').attr('class', 'alert alert-info').html('<p style="text-align:center"><b>Success</b></p>').show().fadeOut(1500);
-				        $('.actve td').removeAttr('style');
-						$('.actve td').removeClass('info');
-						$('.actve td, .restore').removeClass('disabled');
+
+				     		$('.restmessage').attr('class', 'alert alert-info').html('<p style="text-align:center"><b>Success</b></p>').show().fadeOut(1500);
+					        $('.actve td').removeAttr('style');
+							$('.actve td').removeClass('info');
+							$('.actve td, .restore').removeClass('disabled');
+
+        		 	/*	if(status == 1){
+				        	$('.actve td').attr('style', 'color:#337ab7');
+				        	$('.actve td').addClass('info');
+				        	$('.actve td, .restore').attr('disabled', 'disabled');
+					        	 alert('equal');
+					    }*/
+
 						setTimeout(function(){
-					        $('#modalrestore').modal('toggle');  
+					        $('#modalrestore').modal('hide');  
 					        location.reload();
-						},2000)
+						},2500)
             });
     	});
 
@@ -129,14 +141,21 @@ $(document).ready(function() {
 					success: function(percentComplete)
 					{
 					        console.log(percentComplete)
-					        var val = Math.floor((percentComplete)*100)+'%';
-       						 $('.progress-bar').width(val).text(val)
+					        var val 	= Math.floor((percentComplete)*100)+'%';
+       							total 	=  $('.progress-bar').width(val).text(val)
        						// $('#percent').text(val);
 					       	//$('.bar').css('width', (percentComplete)*100+'%');
 							$('#generate').attr('disabled','disabled');
-							/*if(val == 100+'%'){
-							$('#generatemodal').modal('hide');
-							}*/
+							if(percentComplete == 1){
+								setTimeout(function(){ 
+									$('#generatemodal').modal('hide'); 
+									/*$('#generate').removeAttr('disabled');
+									$('.progress').css("display",'block');
+									$('#percent').text('0%');*/
+									location.reload();
+								},2500)
+
+							}
 					}
 			});
 	})); //end of progress
