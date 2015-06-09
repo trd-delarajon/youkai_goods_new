@@ -1,20 +1,49 @@
-<?php 
+<?php /*
 
-
-define ('base_url', getcwd().'/'."generate_html/");
+include_once('controller/database.php');
+include_once 'publish.php';
+	
 //define ('base_url', dirname(__DIR__).'/'."youkai_goods_static/generate_folder/");
-$date 		= date('Ymd H:i:s');
-$path 		= base_url.$date;
+define ('base_url', dirname(__DIR__).'/'."youkai_goods_static/HTML-Files");
+
+$status1 = fetchCsvfileStatus1();
+	
+$path 		= base_url.'/'.$status1['filename'];
+
+if(!file_exists($path)){
+    if (!mkdir($path, 0777, true)) {//0777
+        die('0');
+    }else{
+		$staticHTML = new publish($status1['filename'],$status1['filename']);
+    	echo '1';
+    }
+}
+
+?>*/
+
+include_once('controller/database.php');
+include_once('publish.php');
+
+//define ('base_url', dirname(__DIR__).'/'."youkai_goods_static/generate_folder/");
+define ('base_url', dirname(__DIR__).'/'."youkai_goods_static/HTML-Files");
+
+$status1 = fetchCsvfileStatus1();
+$version = countCsv();
+$folderVersion = substr($status1['filename'], 0, 8).'Ver'.$version;
+$path 		= base_url.'/'.$folderVersion;
 $message 	= " Folder created ";
 
 
 
 if(!file_exists($path)){
-    if (!mkdir($path, 0777, true)) {//0777
-        die('Failed to create folder...');
-    }
+	if (!mkdir($path, 0777, true)) {//0777
+		die('0');
+	}else{
+		echo $folderVersion.'<br>';
+		$staticHTML = new publish($status1['filename'], $folderVersion);
+		echo '1';
+	}
 }
+// echo $path;
 
-echo 'Foldername: '.$date.$message.'</br></br></br>';
-
- ?>
+?>

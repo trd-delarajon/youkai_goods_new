@@ -128,10 +128,8 @@
 										<div class="con_texttwo_img">
 											<div class="headbckgrnd">このグッズに関するお問い合わせ先</div>
 											<div class="textcon_two">
-												株式会社バンダイお客様相談センター<br>
-												〒277-8511　柏市豊四季241-22<br>
-												電話番号：0570-041-101<br>
-											ＵＲＬ：http://www.bandai.co.jp/candy/						</div>
+												{$prodInq[$indexItem]};
+											</div>
 										</div>
 									</div>
 									<hr class="bord_top">

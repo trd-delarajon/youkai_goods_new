@@ -8,6 +8,7 @@
 		private $img_path_array;
 		private $external_links_array;
 		private $external_links_label_array;
+		private $prodInq_array;
 		
 		public function setCSVData($indexdata){
 			$this->CSV_data = $indexdata;
@@ -26,13 +27,16 @@
 				$img_arr = explode("\\n", $this->CSV_data[$index][1]);
 				$ext_link_arr = explode("\\n", $this->CSV_data[$index][8]);
 				$ext_link_lbl_arr = explode("\\n", $this->CSV_data[$index][9]);
+				$prodIn = str_replace("\\n", "</br>", $this->CSV_data[$index][10]);
 				$this->prod_desc_array[$index] = $desc_arr;
 				$this->img_path_array[$index] = $img_arr;
 				$this->external_links_array[$index] = $ext_link_arr;
 				$this->external_links_label_array[$index] = $ext_link_lbl_arr;
 				$this->CSV_data[$index][4] = str_replace("\\n", "</br>", $this->CSV_data[$index][4]);
-				
+				$this->prodInq_array[$index] = $prodIn;
 			}
+			
+			echo $this->getBaseUrl();
 		}
 		
 		private function setBaseUrl(){
@@ -90,6 +94,9 @@
 		public function getBaseUrl(){
 			return $this->baseUrl;
 		}
-
+		
+		public function getProductInquiry(){
+			return $this->prodInq_array;
+		}
 	}
 ?>
