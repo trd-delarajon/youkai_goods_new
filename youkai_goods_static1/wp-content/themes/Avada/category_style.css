@@ -1,0 +1,624 @@
+@CHARSET "UTF-8";
+
+/*Main*/
+body.home div#wrapper div#main div.avada-row {
+	/* margin-top: 24%; */
+}
+/*Content*/
+div#content {
+	width: 660px;
+	font-family:"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif !important;
+}
+#posts-container{
+	border: 1px solid #798bc4;
+}
+.post_list{
+	float: left;
+	width: 300px;
+	display: inline-block;
+	position: relative;
+}
+.post_list p{
+	margin:0px;
+}
+#post-goods{
+	padding: 12px;
+}
+div.catpost_right {
+	float:right;
+	width: 145px;
+}
+div.title_post {
+	min-height: 75px;
+}
+div.post_img {
+	float: left;
+	border: 2px solid #cccccc;
+}
+div.post_img a img {
+	width: 145px;
+	height: 145px;
+}
+div.catpost_right div.title_post a{
+	color: #0039FF;
+	font-size: 14px;
+	font-weight: bold;
+}
+.catlower {
+	color:  #000000;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 1.4;
+}
+div.catpost_right div.post-new {
+	height:23px;
+}
+.cat_nopost{
+	background: url('images/img/home/bg_goods.png');
+	border-top: 3px solid #325DE6;
+	border-bottom: 3px solid #325DE6;
+	text-align:center;
+	padding:107px;
+}
+.nopost_img{
+	background: url('images/img/category/item2.png');
+	width: 418px;
+	height: 310px;
+	display: inline-block;
+}
+/*Menu*/
+.side1{
+	background:url('images/img/home/side1.png');
+	width:252px;
+	height:143px;
+	display: inline-block;
+}
+.page_item_menu1{
+	background:url('images/img/home/menu1.png');
+	width:239px;
+	height:39px;
+	display: inline-block;
+}
+.page_item_menu1:hover{
+	background:url('images/img/home/menu_hover1.png');
+	cursor:pointer;
+}
+.page_item_menu1.current{
+    background:url('images/img/home/menu_hover1.png');
+    cursor:pointer;
+}
+.page_item_menu2{
+	background:url('images/img/home/menu2.png');
+	width:239px;
+	height:39px;
+	display: inline-block;
+}
+.page_item_menu2.current{
+	background:url('images/img/home/menu_hover2.png');
+}
+.page_item_menu2:hover{
+	background:url('images/img/home/menu_hover2.png');
+	cursor:pointer;
+}
+.page_item_menu3{
+	background:url('images/img/home/menu3.png');
+	width:239px;
+	height:39px;
+	display: inline-block;
+}
+.page_item_menu3.current{
+	background:url('images/img/home/menu_hover3.png');
+}
+.page_item_menu3:hover{
+	background:url('images/img/home/menu_hover3.png');
+	cursor:pointer;
+}
+.page_item_menu4{
+	background:url('images/img/home/menu4.png');
+	width:239px;
+	height:39px;
+	display: inline-block;
+}
+.page_item_menu4.current{
+	background:url('images/img/home/menu_hover4.png');
+}
+.page_item_menu4:hover{
+	background:url('images/img/home/menu_hover4.png');
+	cursor:pointer;
+}
+.page_item_menu5{
+	background:url('images/img/home/menu5.png');
+	width:239px;
+	height:39px;
+	display: inline-block;
+}
+.page_item_menu5.current{
+	background:url('images/img/home/menu_hover5.png');
+}
+.page_item_menu5:hover{
+	background:url('images/img/home/menu_hover5.png');
+	cursor:pointer;
+}
+
+.page_item_menu6{
+	background:url('images/img/home/menu6.png');
+	width:239px;
+	height:39px;
+	display: inline-block;
+}
+.page_item_menu6.current{
+	background:url('images/img/home/menu_hover6.png');
+}
+.page_item_menu6:hover{
+	background:url('images/img/home/menu_hover6.png');
+	cursor:pointer;
+}
+.page_item_menu7{
+	background:url('images/img/home/menu7.png');
+	width:239px;
+	height:39px;
+	display: inline-block;
+}
+.page_item_menu7.current{
+	background:url('images/img/home/menu_hover7.png');
+}
+.page_item_menu7:hover{
+	background:url('images/img/home/menu_hover7.png');
+	cursor:pointer;
+}
+.page_item_menu8{
+	background:url('images/img/home/menu8.png');
+	width:239px;
+	height:39px;
+	display: inline-block;
+}
+.page_item_menu8.current{
+	background:url('images/img/home/menu_hover8.png');
+}
+.page_item_menu8:hover{
+	background:url('images/img/home/menu_hover8.png');
+	cursor:pointer;
+}
+.page_item_menu9{
+	background:url('images/img/home/menu9.png');
+	width:239px;
+	height:39px;
+	display: inline-block;
+}
+.page_item_menu9.current{
+	background:url('images/img/home/menu_hover9.png');
+}
+.page_item_menu9:hover{
+	background:url('images/img/home/menu_hover9.png');
+	cursor:pointer;
+}
+.page_item_menu10{
+	background:url('images/img/home/menu10.png');
+	width:239px;
+	height:39px;
+	display: inline-block;
+}
+.page_item_menu10.current{
+	background:url('images/img/home/menu_hover10.png');
+}
+.page_item_menu10:hover{
+	background:url('images/img/home/menu_hover10.png');
+	cursor:pointer;
+}
+.page_item_menu11{
+    background:url('images/img/home/menu11.png');
+    width:239px;
+    height:39px;
+    display: inline-block;
+}
+.page_item_menu11.current,.page_item_menu11.slug{
+    background:url('images/img/home/menu_hover11.png');
+}
+.page_item_menu11:hover{
+    background:url('images/img/home/menu_hover11.png');
+    cursor:pointer;
+}
+.page_item_menu12{
+    background:url('images/img/home/menu12.png');
+    width:239px;
+    height:39px;
+    display: inline-block;
+}
+.page_item_menu12.current,.page_item_menu12.slug{
+    background:url('images/img/home/menu_hover12.png');
+}
+.page_item_menu12:hover{
+    background:url('images/img/home/menu_hover12.png');
+    cursor:pointer;
+}
+/*Home posts */
+
+
+body.home .grid-layout{
+	/*width: 360px !important;*/
+	float: left !important;
+}
+
+.post_head_image {
+	width: 352px;
+	max-width: none;
+}
+#public_site_block {
+	/* width: 352px; */
+}
+#youkai_world_block {
+	width: 352px;
+}
+
+body.home .grid-layout{
+	width: 360px !important;
+}
+
+body.home h2.post-title {
+	font-weight: bold !important;
+}
+body.home div.display_type_1 div.post-category img {
+	height: 23px !important;
+}
+body.home div.display_type_1 div.post_img {
+	float: left !important;
+	width: 83px !important;
+	padding-bottom: 5px !important;
+}
+body.home div.display_type_1 div.post-content {
+	float: right !important;
+	width: 72% !important;
+	padding-left: 10px !important;
+}
+body.home div.display_type_1 div.icons_area {
+	padding-left: 10px;
+	width: 95px;
+	float: left;
+}
+body.home div.display_type_1 div.post-category {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 100%;
+	float: left;
+}
+body.home div.display_type_1 div.post-date-youkai {
+	padding-top: 5px;
+	width: 50px;
+	float: left;
+}
+body.home div.display_type_1 div.post-new {
+	float: left;
+}
+body.home div.display_type_2 div.post-content {
+	float: left;
+	width: 65% !important;
+}
+body.home div.display_type_2 h2 .post-title {
+	padding-top: 11px;
+}
+body.home div.display_type_2 div.post-category {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 100%;
+	float: left;
+}
+body.home div.display_type_2 div.post-date-youkai {
+	padding-top: 5px;
+	width: 50px;
+	float: left;
+}
+body.home div.display_type_2 div.post-new {
+	padding-top: 10px;
+	float: left;
+	width: 100px;
+	clear: both;
+}
+body.home div.display_type_2 div.icons_area {
+	width: 95px;
+	float: left;
+}
+body.home div.display_type_3 div.post_img {
+	display: none !important;
+}
+body.home div.display_type_3 div.youkai-content {
+	width: 70%;
+	float: right;
+}
+body.home div.display_type_3 div.icons_area {
+	width: 95px;
+	float: left;
+}
+body.home div.display_type_3 div.post-category {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 70%;
+	float: left;
+}
+body.home div.display_type_3 div.post-date-youkai {
+	padding-top: 5px;
+	width: 50px;
+	float: left;
+}
+body.home div.display_type_3 div.post-new {
+	padding-top: 10px;
+	float: left;
+	width: 100px;
+	clear: both;
+}
+body.home div.display_type_3 h2.post-title  {
+		width: 70% !important;
+		float: left;
+	}
+body.home div.display_type_4 div.post-content,
+body.home div.display_type_4 div.post-category,
+body.home div.display_type_4 div.post-new,
+body.home div.display_type_4 div.post-date-youkai,
+.meta-info {
+	display: none !important;
+}
+.display_type_4 .post_img {
+	padding: 0px;
+}
+body.home .grid-layout .post, .timeline-layout .post,
+body.home .type-post {
+	background-color: #FFFFFF;
+}
+body.home .timeline-layout .home_post_border_1 .post,
+body.home .grid-layout .home_post_border_1 .post,
+body.home .home_post_border_1 .type-post   {
+	border: 3px solid #009fe6 !important;
+}
+body.home .timeline-layout .home_post_border_2 .post,
+body.home .grid-layout .home_post_border_2 .post,
+body.home .home_post_border_2 .type-post    {
+	border: 3px solid #ff9900 !important;
+}
+body.home .home_post_border_1 .post-content h2,
+body.home #main .home_post_border_1 .type-post h2 a,
+body.home #main .home_post_border_1 .type-post h2 a:hover,
+body.home #main .home_post_border_1 .product .product_title {
+	color: hsl(199, 100%, 45%) !important;
+	color: #009fe6 !important;
+}
+body.home #main .home_post_border_1 .type-post h2 a:hover {
+	text-decoration: underline;
+}
+
+body.home .home_post_border_2 .post-content h2,
+body.home #main .home_post_border_2 .type-post h2 a,
+body.home #main .home_post_border_2 .type-post h2 a:hover,
+body.home #main .home_post_border_2 .product .product_title {
+	color: hsl(34, 84%, 46%) !important;
+	color: #ff9900 !important;
+}
+body.home #main .home_post_border_2 .type-post h2 a:hover {
+	text-decoration: underline;
+}
+body.home .grid-layout .type-post {
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+/*	width: 346.5px !important; /*308.5*/
+}
+
+
+body.home .grid-layout .type-post .meta-info {
+	margin-bottom: 0px !important;
+}
+body.home .portfolio-wrapper.isotope {
+	overflow: none !important;
+}
+/*Sidebar*/
+.nkb{
+    margin-top:40px;
+    background: url('images/img/home/side_banner_test.gif');
+    width: 241px;
+    height: 103px;
+}
+.nyan{
+	margin-top:40px;
+}
+.goods_menu{
+	margin-top: 10px;
+}
+body.home div#wrapper div#main div.avada-row div#sticker{
+	width:240px;
+	min-height: 890px;
+} 
+body.home div#wrapper div#main div.avada-row div#sidebar {
+	/* margin-top: 12px;  */
+	float:left !important;
+}
+body.home .grid-layout .post-content-container {
+	padding: 11px !important;
+}
+#content {
+	width: 720px;/*713px;*/
+	margin-bottom: 0;
+	float:right;
+}
+
+#loading {
+	display: block;
+}
+#loading img{
+	margin : 0 auto;
+	display: block;
+	height:33px;
+}
+
+#loadingleft {
+	display: block;
+}
+#loadingleft img{
+	margin : 0 auto;
+	display: block;
+	height:33px;
+}
+#loadingright {
+	display: block;
+}
+#loadingright img{
+	margin : 0 auto;
+	display: block;
+	height:33px;
+}
+#show_more_public_img, 
+#show_more_youkai_img{
+	display:none;
+	cursor: pointer;
+}
+footer.footer-area div.footer-widget-col div.textwidget div a img {
+	margin-top: 8px !important;
+}
+footer.footer-area div.avada-row {
+	max-width: 852px !important;
+}
+@media screen and (max-width: 1000px) {
+		
+	#public_site_container {
+		padding-left: 8px !important;
+	}
+	
+}
+
+@media screen and (max-width: 768px) {
+	#wrapper #main{
+		padding: 0;
+	}
+	
+	.grid-layout {
+		margin : 0 auto !important;
+	}
+	
+	#posts-container {
+		width : 100%;
+	}
+	
+	.type-post {
+		margin-left: 5px !important;
+		margin-right: 5px !important;
+	}
+	
+	#public_site_container {
+		padding-left: 8px !important;
+	}
+	
+	#youkai_world_container {
+		padding-left: 8px !important;
+	}
+	footer.footer-area div.footer-widget-col div.textwidget div a img {
+		margin-top: 8px !important;
+		margin-left:5px !important;
+	}
+
+}
+
+
+@media screen and (max-width: 386px) {
+	body.home .grid-layout{
+		width: 300px !important;
+	}
+	.post_head_image {
+		width: 300px;
+	}
+	
+	#public_site_block {
+		width: 300px;
+	}
+	#youkai_world_block {
+		width: 300px;
+	}
+	
+	#content {
+		width: 300px !important;
+		margin : 0 auto 0 auto !important;
+	}
+	
+	#public_site_container {
+		padding-left: 0px !important;
+	}
+	
+	#youkai_world_container {
+		padding-left: 0px !important;
+	}
+	body.home div.display_type_1 div.post_img {
+		width: 68px !important;
+	}
+	body.home div.display_type_1 div.post-category {
+		width: 200px;
+	}
+	body.home div.display_type_3 div.post-category,
+	body.home div.display_type_3 h2.post-title  {
+		width: 65% !important;
+	}
+	body.home div.display_type_3 h2.post-title  {
+		float: left;
+	}
+	body.home div.display_type_3 div.icons_area {
+		width: 82px !important;
+	}
+	body.home div.display_type_2 div.icons_area {
+		width: 78px !important;
+	}
+	
+}
+html body.page div#wrapper div#main div.avada-row {
+	/* background-image: url("http://youkai-world.com/wp-content/themes/Avada/images/img/home/goods_bg.png"); */
+	padding-bottom:50px;
+	width:980px;
+	max-width:980px;
+}
+div#main,
+div#wrapper {
+	margin : 0 auto 0 auto;
+	width: 100%;
+	/* max-width: 1468px !important; */
+}
+div.page-title-container {
+	display: none !important;
+}
+#sidebar {
+	float: left;
+}
+#content {
+	float: right;
+}
+div.display_type_1   {
+	background-image: url('images/img/category/cat_bg.png');
+	width:323px;
+	height: 174px;
+	position: relative;
+	display: inline-block;
+}
+.page-template-category-php #posts-container {
+	border: none !important;
+}
+
+/*Sidebar*/
+#sidebar {
+	float:left !important;
+	display:inline-flex;
+}
+.nyan{
+    margin-top:40px;
+    background: url('images/img/home/jibanyan.png');
+    width: 249px;
+    height: 288px;
+}
+.page-template-category-php #main{
+	background-image: url('images/img/home/goods_bg.png');
+}
+.page-template-category-php .title_post a:hover{
+	color:#333;
+}
+.sidebar_hidden {
+	visibility: hidden;
+}
+@media \0screen{
+	.page-template-category-php #main{
+	   margin:120px 0 0 0 !important;
+	   padding-top:1px;
+	}
+}

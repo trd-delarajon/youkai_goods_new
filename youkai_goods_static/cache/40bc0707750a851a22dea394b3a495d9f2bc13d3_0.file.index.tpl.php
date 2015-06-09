@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.23, created on 2015-05-21 20:09:47
+<?php /* Smarty version 3.1.23, created on 2015-06-09 11:08:14
          compiled from "templates/index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:122582146555e1f6b7f9c93_59076852%%*/
+/*%%SmartyHeaderCode:17441936735576acfe2bdba8_42285322%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,33 +9,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '40bc0707750a851a22dea394b3a495d9f2bc13d3' => 
     array (
       0 => 'templates/index.tpl',
-      1 => 1432231325,
+      1 => 1432523296,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '122582146555e1f6b7f9c93_59076852',
+  'nocache_hash' => '17441936735576acfe2bdba8_42285322',
   'variables' => 
   array (
     'numIndex' => 0,
     'indexPage' => 0,
     'var' => 0,
     'indexLink' => 0,
-    'maxItem' => 0,
+    'csvData' => 0,
     'singleLink' => 0,
     'img_path_array' => 0,
-    'csvData' => 0,
     'newIcon' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.23',
-  'unifunc' => 'content_555e1f6ba5b681_67705395',
+  'unifunc' => 'content_5576acfe37b5c1_80061977',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_555e1f6ba5b681_67705395')) {
-function content_555e1f6ba5b681_67705395 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5576acfe37b5c1_80061977')) {
+function content_5576acfe37b5c1_80061977 ($_smarty_tpl) {
 ?>
 <?php
-$_smarty_tpl->properties['nocache_hash'] = '122582146555e1f6b7f9c93_59076852';
+$_smarty_tpl->properties['nocache_hash'] = '17441936735576acfe2bdba8_42285322';
 echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
@@ -124,8 +123,7 @@ echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smart
 							<div id="post-goods">
 								<div class="post-content-container">
 									<div class="goods_nav">
-
-										<?php if ($_smarty_tpl->tpl_vars['numIndex']->value<3) {?>
+										<?php if ($_smarty_tpl->tpl_vars['numIndex']->value<=4) {?>
 											<?php $_smarty_tpl->tpl_vars['var'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? $_smarty_tpl->tpl_vars['numIndex']->value+1 - (1) : 1-($_smarty_tpl->tpl_vars['numIndex']->value)+1)/abs($_smarty_tpl->tpl_vars['var']->step));
 if ($_smarty_tpl->tpl_vars['var']->total > 0) {
 for ($_smarty_tpl->tpl_vars['var']->value = 1, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
@@ -200,24 +198,25 @@ echo $_smarty_tpl->tpl_vars['var']->value;?>
 												<?php }} ?>
 											<?php }?>
 
-											<?php if ($_smarty_tpl->tpl_vars['indexPage']->value<=($_smarty_tpl->tpl_vars['numIndex']->value*0.72)) {?>
+											<?php if ($_smarty_tpl->tpl_vars['indexPage']->value<=($_smarty_tpl->tpl_vars['numIndex']->value*0.70)) {?>
 												<span class="page-numbers dots">…</span>
 											<?php }?>
-											
+												
 											<?php if ($_smarty_tpl->tpl_vars['indexPage']->value!=$_smarty_tpl->tpl_vars['numIndex']->value) {?>
 												<a class="page-numbers" href="<?php echo $_smarty_tpl->tpl_vars['indexLink']->value;
 echo $_smarty_tpl->tpl_vars['numIndex']->value;?>
 .html"><?php echo $_smarty_tpl->tpl_vars['numIndex']->value;?>
 </a>
 											<?php }?>
+
 											<?php if ($_smarty_tpl->tpl_vars['indexPage']->value!=$_smarty_tpl->tpl_vars['numIndex']->value) {?>
 												<a class="next page-numbers" href="<?php echo $_smarty_tpl->tpl_vars['indexLink']->value;
 echo $_smarty_tpl->tpl_vars['indexPage']->value+1;?>
 .html">次へ »</a>
 											<?php }?>		
 										<?php }?>
-									</div>
-										<?php $_smarty_tpl->tpl_vars['var'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? $_smarty_tpl->tpl_vars['maxItem']->value+1 - (0) : 0-($_smarty_tpl->tpl_vars['maxItem']->value)+1)/abs($_smarty_tpl->tpl_vars['var']->step));
+									</div>	
+										<?php $_smarty_tpl->tpl_vars['var'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? count($_smarty_tpl->tpl_vars['csvData']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['csvData']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['var']->step));
 if ($_smarty_tpl->tpl_vars['var']->total > 0) {
 for ($_smarty_tpl->tpl_vars['var']->value = 0, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
 $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration == 1;$_smarty_tpl->tpl_vars['var']->last = $_smarty_tpl->tpl_vars['var']->iteration == $_smarty_tpl->tpl_vars['var']->total;?>

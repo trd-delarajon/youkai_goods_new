@@ -10,7 +10,13 @@
 		exit();
 	}
 
+	$status1 = fetchCsvfileStatus1();
 
 	include('../generateFolder.php');
+	include('../publish.php');
+
+	new publish('csv_file/'.$status1['filename'], $status1['filename']);
+
+
 
 ?>

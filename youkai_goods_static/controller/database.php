@@ -32,16 +32,40 @@
 		}
 
 
-		function getAllAdmin()
+		function check_username($username)
 		{
 			$db = database();
-			$sql = "SELECT * FROM users";
+			$sql ="SELECT user_id FROM users WHERE username=?";
+			$stmt = $db->prepare($sql);
+			$stmt->execute(array($username));
+			$user = $stmt->rowCount();
+			$db = null;	
+			return $user;
+
+		}
+
+
+		function deleteUser($user_id)
+		{
+			$db = database();
+			$sql = "DELETE FROM users WHERE user_id=?";
 			$pdo = $db->prepare($sql);
-			$pdo->execute();
-			$user = $pdo->fetchAll();
+			$pdo->execute(array($user_id));
+			$db = null;
+		}
+
+
+
+		function getAllAdmin($user_id)
+		{
+			$db = database();
+			$sql = "SELECT * FROM users WHERE user_id !=?";
+			$pdo = $db->prepare($sql);
+			$pdo->execute(array($user_id));
+			$user = $pdo->fetchAll(PDO::FETCH_ASSOC);
 			$db = null;
 
-			return user;
+			return $user;
 		}
 
 
@@ -126,13 +150,18 @@
 			$db = null;
 		}
 
+		function countCsv()
+		{
+			$db = database();
+			$sql = "SELECT COUNT(*) AS count FROM csvfile";
+			$set = $db->prepare($sql);
+			$set->execute();
+			$count = $set->fetch();
+			$total = $count['count'];
+			$db = null;
 
-
-
-
-
-
-
+			return $total;
+		}
 
 
 

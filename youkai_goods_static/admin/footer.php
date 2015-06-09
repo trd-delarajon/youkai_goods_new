@@ -20,6 +20,7 @@ $csvtime	= time_ago_en($date);
 <script src="../stylesheets/js/jquery-1.11.1.min.js"></script>
 <script src="../stylesheets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../stylesheets/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../stylesheets/js/fnReloadAjax.js"></script>
 <script type="text/javascript" src="../stylesheets/js/dataTables.bootstrap.js"></script>
 <script type="text/javascript" src="../stylesheets/js/jquery.uploadify.min.js"></script>
 
@@ -133,7 +134,7 @@ $(document).ready(function() {
 				$('.progress').css("display",'block');
 				$('#percent').text('0%');
 			$.ajax({
-					url 			: "../controller/getgen.php", 
+					url 			: "../generateFolder.php",  
 					type  			: 'GET',
 					cache 			: false,
 					contentType 	: false,
