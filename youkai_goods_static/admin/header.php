@@ -12,6 +12,8 @@
         
       $projectname = 'Admin Panel';
 
+     $admin = getAdmin($user_id);
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,12 +106,12 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"> </span> Hi! <?=$username?>, <span class="glyphicon glyphicon-cog"> </span><span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"> </span> Hi! <span id="adminname"><?=$admin['username']?></span>, <span class="glyphicon glyphicon-cog"> </span><span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="useraccount.php"><span class="glyphicon glyphicon-user"> </span> Add user</a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header"> Account Setting</li>
-                    <li><a href="#"><span class="glyphicon glyphicon-edit"> </span> Update</a></li>
+                    <li><a href="#update" data-toggle="modal"><span class="glyphicon glyphicon-edit"> </span> Update</a></li>
                      <li><a href="logout.php"><span class="glyphicon glyphicon-off"> </span> Logout</a></li>
                   </ul>
                 </li>
@@ -169,3 +171,50 @@
         </div>
       </div>
     </div>    
+
+
+
+
+    <div class="modal fade" id="update" tabindex="-1" role="dialog"  aria-hidden="true"  data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+           <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+            <h4 class="modal-title">Update Account</h4>
+          </div>
+          <div class="modal-body">
+            <div class="messageupload"></div>
+                <div class="error-msgupdate alert-success"></div>
+          <form id="form" method="post"> 
+              
+                  <div class="form-group">
+                    <label>Fullname</label>
+                    <input type="text" class="form-control"  id="fullname" value="<?=$admin['fullname']?>" placeholder="Fullname" autofocus >
+                  </div>
+
+                  <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control"  id="username" value="<?=$admin['username']?>" placeholder="Username" disabled >
+                  <!--   <span id="availability_status"></span> -->
+                  </div>
+
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control"  id="password" placeholder="Password" >
+                  </div>
+
+                  <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control"   id="cpassword" placeholder="Confirm Password" >
+                  </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-sm btnupdate">Save</button>
+            <button type="button" class="btn btn-default btn-sm"  data-dismiss="modal">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>   

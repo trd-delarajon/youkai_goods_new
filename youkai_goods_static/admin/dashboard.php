@@ -22,22 +22,23 @@
 ?>
 <?php include_once("header.php"); ?>
 	<div class="jumbotron">
+			<?php 
+
+				$directory = "../HTML-Files/";
+ 
+				$files = glob($directory . "*");
+				 
+			 	//$a = each($files)[1];
+			 	$a 	= end($files);
+				echo 'Latest Static HTML: <a href="'.$a.'/indexPage1.html" target="_blank"><i>Click Here</i></a><br><br>';
+			 ?>
         <?php  $csvfname = fetchAllCsvfile();
         if ($csvfname!= null): ?>
         <span>Newest csv file:  <i style="color:#337ab7" id="newestfile">
         	<?php if ($status1['status']== 1): ?> <?=$status1['filename']?> <?php endif ?> 
          </i></span> 
 		
-		<!-- <form method="post">
-			<label>Choose csv file to restore :</label>
-			<select name="csv_id">
-			<?php foreach ($csvfname as $key => $value):  ?>	
-				<option  value="<?=$value['csv_id']?>"  <?php if ($value['status']== 1) : ?>  style="background-color:#337ab7"  selected <?php endif ?> > <?=$value['filename']?> </option>
-			 <?php endforeach ?>
-			</select>
-			<button type="submit" name="save" class="btn btn-default btn-xs">Save</button>
-		</form> -->
-
+		
 		 <table class="table table-bordered table-condensed table-hover datatable">
 		 	<thead>
 				<tr>

@@ -10,13 +10,15 @@
 		exit();
 	}
 
+	 	$user 		= $_SESSION['user'];
+      	$user_id 	= $user['user_id'];
 
 		if (isset($_POST)) {
 			$fullname		= trim($_POST['name']);
 			$username		= trim($_POST['user']);
 			$password		= md5($_POST['pass']);
 
-			addAdmin($username, $password, $fullname);
+			updateAdmin($username, $password, $fullname, $user_id);
 		}
 
 		echo json_encode($_POST);

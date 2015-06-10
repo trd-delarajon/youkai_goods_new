@@ -31,6 +31,15 @@
 			$db = null;
 		}
 
+		function updateAdmin($username, $password, $fullname, $user_id)
+		{
+			$db = database();
+			$sql = "UPDATE users SET username=?, password=?, fullname=? WHERE user_id=?";
+			$pdo = $db->prepare($sql);
+			$pdo->execute(array($username, $password, $fullname, $user_id));
+			$db = null;
+		}	
+
 
 		function check_username($username)
 		{
@@ -68,6 +77,18 @@
 			return $user;
 		}
 
+
+		function getAdmin($user_id)
+		{
+			$db = database();
+			$sql = "SELECT * FROM users WHERE user_id =?";
+			$pdo = $db->prepare($sql);
+			$pdo->execute(array($user_id));
+			$user = $pdo->fetch(PDO::FETCH_ASSOC);
+			$db = null;
+
+			return $user;
+		}
 
 
 		function uploadCsvfile($user_id, $csv_id, $filename)
