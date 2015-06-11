@@ -18,7 +18,7 @@
 			font:13px/20px 'PTSansRegular', Arial, Helvetica, sans-serif;
 			}
 			body #header.sticky-header {
-			background: rgba(255,255,255,0.97) url('../../wp-content/themes/Avada/images/img/header/header_bg.png') !important;
+			background: rgba(255,255,255,0.97) url('../../uploadimages/system-images/header_bg.png') !important;
 			background-repeat: no-repeat !important;
 			/*height: 71px;*/
 			height: 60px;
@@ -36,7 +36,7 @@
 			display: block !important;
 			}
 			div#main {
-			background-image: url('../../../../wp-content/themes/Avada/images/img/home/goods_bg.png');
+			background-image: url('../../uploadimages/system-images/goods_bg.png');
 			/*background-size: contain;*/
 			margin : 0 auto 0 auto;
 			width: 100%;
@@ -127,7 +127,7 @@
 			/*margin: -3px 0 0 0 !important;*/
 			}
 			body #header.sticky-header .goods_logo a{
-			background: url('../../wp-content/themes/Avada/images/img/header/headerlogo.png');
+			background: url('../../uploadimages/system-images/headerlogo.png');
 			width: 237px;
 			height: 48px;
 			}
@@ -157,7 +157,7 @@
 			border-top:3px solid #fff;
 			}
 			div#wrapper div#main div.avada-row {
-			/*  background-image: url(/../../wp-content/themes/Avada/images/img/home/goods_bg.png); */
+			/*  background-image: url(../../uploadimages/system-images/goods_bg.png); */
 			width:980px;
 			padding-bottom: 50px;
 			max-width:980px;
@@ -173,7 +173,7 @@
 			clear: both;
 			}
 			body.home #posts-container{
-			background:url('../../wp-content/themes/Avada/images/img/home/bg_goods.png');
+			background:url('../../uploadimages/system-images/bg_goods.png');
 			background-repeat: repeat;
 			border-top: 3px solid #325DE6;
 			border-bottom: 3px solid #325DE6;
@@ -188,213 +188,213 @@
 			}
 
 			.side1{
-			background:url('../../wp-content/themes/Avada/images/img/home/side1.png');
+			background:url('../../uploadimages/system-images/side1.png');
 			width:252px;
 			height:143px;
 			display: inline-block;
 			}
 			.page_item_menu1{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu1.png');
+			background:url('../../uploadimages/system-images/menu1.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu1.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover1.png');
+			background:url('../../uploadimages/system-images/menu_hover1.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu1:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover1.png');
+			background:url('../../uploadimages/system-images/menu_hover1.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu2{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu2.png');
+			background:url('../../uploadimages/system-images/menu2.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu2.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover2.png');
+			background:url('../../uploadimages/system-images/menu_hover2.png');
 			}
 
 			.page_item_menu2:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover2.png');
+			background:url('../../uploadimages/system-images/menu_hover2.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu3{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu3.png');
+			background:url('../../uploadimages/system-images/menu3.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu3.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover3.png');
+			background:url('../../uploadimages/system-images/menu_hover3.png');
 			}
 
 			.page_item_menu3:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover3.png');
+			background:url('../../uploadimages/system-images/menu_hover3.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu4{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu4.png');
+			background:url('../../uploadimages/system-images/menu4.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu4.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover4.png');
+			background:url('../../uploadimages/system-images/menu_hover4.png');
 			}
 
 			.page_item_menu4:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover4.png');
+			background:url('../../uploadimages/system-images/menu_hover4.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu5{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu5.png');
+			background:url('../../uploadimages/system-images/menu5.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu5.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover5.png');
+			background:url('../../uploadimages/system-images/menu_hover5.png');
 			}
 
 			.page_item_menu5:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover5.png');
+			background:url('../../uploadimages/system-images/menu_hover5.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu6{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu6.png');
+			background:url('../../uploadimages/system-images/menu6.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu6.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover6.png');
+			background:url('../../uploadimages/system-images/menu_hover6.png');
 			}
 
 			.page_item_menu6:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover6.png');
+			background:url('../../uploadimages/system-images/menu_hover6.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu7{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu7.png');
+			background:url('../../uploadimages/system-images/menu7.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu7.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover7.png');
+			background:url('../../uploadimages/system-images/menu_hover7.png');
 			}
 
 			.page_item_menu7:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover7.png');
+			background:url('../../uploadimages/system-images/menu_hover7.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu8{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu8.png');
+			background:url('../../uploadimages/system-images/menu8.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu8.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover8.png');
+			background:url('../../uploadimages/system-images/menu_hover8.png');
 			}
 
 			.page_item_menu8:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover8.png');
+			background:url('../../uploadimages/system-images/menu_hover8.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu9{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu9.png');
+			background:url('../../uploadimages/system-images/menu9.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu9.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover9.png');
+			background:url('../../uploadimages/system-images/menu_hover9.png');
 			}
 
 			.page_item_menu9:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover9.png');
+			background:url('../../uploadimages/system-images/menu_hover9.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu10{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu10.png');
+			background:url('../../uploadimages/system-images/menu10.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu10.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover10.png');
+			background:url('../../uploadimages/system-images/menu_hover10.png');
 			}
 
 			.page_item_menu10:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover10.png');
+			background:url('../../uploadimages/system-images/menu_hover10.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu11{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu11.png');
+			background:url('../../uploadimages/system-images/menu11.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu11.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover11.png');
+			background:url('../../uploadimages/system-images/menu_hover11.png');
 			}
 
 			.page_item_menu11:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover11.png');
+			background:url('../../uploadimages/system-images/menu_hover11.png');
 			cursor:pointer;
 			}
 
 			.page_item_menu12{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu12.png');
+			background:url('../../uploadimages/system-images/menu12.png');
 			width:239px;
 			height:39px;
 			display: inline-block;
 			}
 
 			.page_item_menu12.current,.page_item_menu12.slug{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover12.png');
+			background:url('../../uploadimages/system-images/menu_hover12.png');
 			}
 
 			.page_item_menu12:hover{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover12.png');
+			background:url('../../uploadimages/system-images/menu_hover12.png');
 			cursor:pointer;
 			}
 
 			.nkb{
 			margin-top:40px;
-			background: url('../../wp-content/themes/Avada/images/img/home/side_banner_test.gif');
+			background: url('../../uploadimages/system-images/side_banner_test.gif');
 			width: 241px;
 			height: 103px;
 			}
 			.nyan{
 			margin-top:40px;
-			background: url('../../wp-content/themes/Avada/images/img/home/jibanyan.png');
+			background: url('../../uploadimages/system-images/jibanyan.png');
 			width: 249px;
 			height: 288px;
 			}
@@ -403,7 +403,7 @@
 			}
 
 			.page_item_menu1.current{
-			background:url('../../wp-content/themes/Avada/images/img/home/menu_hover1.png');
+			background:url('../../uploadimages/system-images/menu_hover1.png');
 			cursor:pointer;
 			}
 			body.home div#wrapper div#main div.avada-row div#sidebar {
@@ -478,7 +478,7 @@
 			}
 
 			#footer{
-			background: url('../../wp-content/themes/Avada/images/img/footer/footer.png') !important;
+			background: url('../../uploadimages/system-images/footer.png') !important;
 			width: 980px;
 			margin: 0 auto;
 			border-top: 0px !important;
@@ -505,7 +505,7 @@
 			margin : 0 auto 0 auto;
 			width: 100%;
 			/* 	max-width: 1349px !important; */
-			background-image:url('../../wp-content/themes/Avada/images/img/home/goods_bg.png');
+			background-image:url('../../uploadimages/system-images/goods_bg.png');
 			}
 
 			.post{
@@ -748,21 +748,21 @@
 			height:23px;
 			}
 			.cat_nopost{
-			background: url('../../wp-content/themes/Avada/images/img/home/bg_goods.png');
+			background: url('../../uploadimages/system-images/bg_goods.png');
 			border-top: 3px solid #325DE6;
 			border-bottom: 3px solid #325DE6;
 			text-align:center;
 			padding:107px;
 			}
 			.nopost_img{
-			background: url('../../wp-content/themes/Avada/images/img/category/item2.png');
+			background: url('../../uploadimages/system-images/item2.png');
 			width: 418px;
 			height: 310px;
 			display: inline-block;
 			}
 			/*Menu*/
 			.side1{
-			background:url('../../wp-content/themes/Avada/images/img/home/side1.png');
+			background:url('../../uploadimages/system-images/side1.png');
 			width:252px;
 			height:143px;
 			display: inline-block;
@@ -782,7 +782,7 @@
 			width: 352px;
 			}
 			html body.page div#wrapper div#main div.avada-row {
-			/* background-image: url("http://youkai-world.com/../../wp-content/themes/Avada/images/img/home/goods_bg.png"); */
+			/* background-image: url("http://youkai-world.com/../../uploadimages/system-images/goods_bg.png"); */
 			padding-bottom:50px;
 			width:980px;
 			max-width:980px;
@@ -803,7 +803,7 @@
 			float: right;
 			}
 			div.display_type_1   {
-			background-image: url('../../wp-content/themes/Avada/images/img/category/cat_bg.png');
+			background-image: url('../../uploadimages/system-images/cat_bg.png');
 			width:323px;
 			height: 174px;
 			position: relative;

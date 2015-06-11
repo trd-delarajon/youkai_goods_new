@@ -35,7 +35,7 @@ class publish{
 		$this->youkaiGoods->setCSVData($this->readCSV('csv_file/'.$csvFile));
 		$this->youkaiGoods->setSingle_page_link(SELF::SINGLE_FILE_NAME, $verFile);
 		$this->link_path = $this->youkaiGoods->getBaseUrl();
-		$this->newIcon = $this->link_path."wp-content/themes/Avada/images/img/new_icon.png";
+		$this->newIcon = "../../uploadimages/system-images/new_icon.png";
 		$this->html_file_path = dirname(__FILE__).'/HTML-Files/'.$verFile;
 		$this->folderVersion = $verFile;
 		$this->generateHTML();
@@ -294,5 +294,5 @@ class publish{
 }
 
 //please erase this, this is here for testing purpose only
-// $shit = new publish('sampleData2.csv','folderSample');
+$shit = new publish('sampleData5.csv','folderSample');
 ?>

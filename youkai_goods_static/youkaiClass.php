@@ -28,6 +28,9 @@
 				$ext_link_arr = explode("\\n", $this->CSV_data[$index][8]);
 				$ext_link_lbl_arr = explode("\\n", $this->CSV_data[$index][9]);
 				$prodIn = str_replace("\\n", "</br>", $this->CSV_data[$index][10]);
+				array_walk($img_arr, function(&$value) {
+					$value = '../../uploadimages/'.$value;
+				});
 				$this->prod_desc_array[$index] = $desc_arr;
 				$this->img_path_array[$index] = $img_arr;
 				$this->external_links_array[$index] = $ext_link_arr;
@@ -35,9 +38,8 @@
 				$this->CSV_data[$index][4] = str_replace("\\n", "</br>", $this->CSV_data[$index][4]);
 				$this->prodInq_array[$index] = $prodIn;
 			}
-			
-			echo $this->getBaseUrl();
 		}
+		
 		
 		private function setBaseUrl(){
 			$currentPath = $_SERVER['PHP_SELF'];
@@ -68,7 +70,6 @@
 
 		public function setTotal_items(){
 			$this->total_items = count($this->CSV_data);
-			echo 'total_items:'.$this->total_items.'<br><br>';
 		}
 
 		public function getTotal_items(){

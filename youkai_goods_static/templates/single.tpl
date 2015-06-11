@@ -8,7 +8,7 @@
 					<div class="avada-row" style="margin-top:0px;margin-bottom:0px;">
 						<div class="logo_v1">
 							<div class="face">
-								<img src="../../wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo">
+								<img src="../../uploadimages/system-images/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo">
 							</div>
 							<div class="goods_logo1"><a href="http://youkai-world.com/" target="_blank"></a></div>
 						</div>
@@ -29,7 +29,7 @@
 			<div class="avada-row">
 				<div class="logo">
 					<div class="face">
-						<img src="../../wp-content/themes/Avada/images/img/header/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo">
+						<img src="../../uploadimages/system-images/logo_face.png" alt="妖怪ウォッチ　グッズ" class="normal_logo">
 					</div>
 					<div class="goods_logo"><a href="http://youkai-world.com/" target="_blank"></a></div>
 				</div>
@@ -135,7 +135,7 @@
 									<hr class="bord_top">
 									<div class="related_prduct_con">
 										<div class="Product_name">
-											<img class="img" src="../../wp-content/themes/Avada/images/img/home/menu_hover12.png">
+											<img class="img" src="../../uploadimages/system-images/menu_hover12.png">
 										</div>
 										<div class="postdet_block">
 

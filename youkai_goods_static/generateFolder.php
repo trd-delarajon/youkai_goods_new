@@ -31,19 +31,15 @@ $status1 = fetchCsvfileStatus1();
 $version = countCsv();
 $folderVersion = substr($status1['filename'], 0, 8).'Ver'.$version;
 $path 		= base_url.'/'.$folderVersion;
-$message 	= " Folder created ";
-
-
 
 if(!file_exists($path)){
 	if (!mkdir($path, 0777, true)) {//0777
 		die('0');
 	}else{
-		echo $folderVersion.'<br>';
+		
 		$staticHTML = new publish($status1['filename'], $folderVersion);
 		echo '1';
 	}
 }
-// echo $path;
 
 ?>
